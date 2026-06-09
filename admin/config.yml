@@ -1,0 +1,167 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+
+  - name: "home"
+    label: "Home Page"
+    files:
+      - label: "Home Page Content"
+        name: "home"
+        file: "data/home.json"
+        format: json
+        fields:
+          - { label: "Hero Title", name: "hero_title", widget: "string" }
+          - { label: "Hero Subtitle", name: "hero_subtitle", widget: "text" }
+          - { label: "Primary Button Label", name: "cta_primary_label", widget: "string" }
+          - { label: "Secondary Button Label", name: "cta_secondary_label", widget: "string" }
+          - { label: "Banner Title", name: "cta_banner_title", widget: "string" }
+          - { label: "Banner Subtitle", name: "cta_banner_subtitle", widget: "string" }
+          - { label: "Banner Button Label", name: "cta_banner_button", widget: "string" }
+          - label: "Feature Cards"
+            name: "features"
+            widget: "list"
+            fields:
+              - { label: "Icon (emoji)", name: "icon", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+
+  - name: "events"
+    label: "Events"
+    file: "data/events.json"
+    format: json
+    fields:
+      - label: "Events"
+        name: "events"
+        widget: "list"
+        fields:
+          - { label: "Event Title", name: "title", widget: "string" }
+          - { label: "Date (e.g. Jun 14, 2026)", name: "date", widget: "string" }
+          - { label: "Location", name: "location", widget: "string" }
+          - { label: "Time (e.g. 11am – 6pm)", name: "time", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Button Label", name: "button_label", widget: "string", default: "RSVP Free" }
+          - label: "Banner Color"
+            name: "gradient"
+            widget: "select"
+            options:
+              - { label: "Orange → Yellow", value: "linear-gradient(to right, #ff6b35, #f7c948)" }
+              - { label: "Teal → Dark", value: "linear-gradient(to right, #4ecdc4, #1a1a2e)" }
+              - { label: "Yellow → Teal", value: "linear-gradient(to right, #f7c948, #4ecdc4)" }
+              - { label: "Orange → Teal", value: "linear-gradient(to right, #ff6b35, #4ecdc4)" }
+              - { label: "Dark → Yellow", value: "linear-gradient(to right, #1a1a2e, #f7c948)" }
+              - { label: "Teal → Orange", value: "linear-gradient(to right, #4ecdc4, #ff6b35)" }
+
+  - name: "hosted-shows"
+    label: "Our Hosted Shows"
+    file: "data/hosted-shows.json"
+    format: json
+    fields:
+      - label: "Shows"
+        name: "shows"
+        widget: "list"
+        fields:
+          - { label: "Show ID (no spaces)", name: "id", widget: "string" }
+          - { label: "Show Name", name: "name", widget: "string" }
+          - { label: "Date (YYYY-MM-DD)", name: "date", widget: "string" }
+          - { label: "Display Date", name: "display_date", widget: "string" }
+          - { label: "Time", name: "time", widget: "string" }
+          - { label: "Venue Name", name: "venue_name", widget: "string" }
+          - { label: "Venue Address", name: "venue_address", widget: "string" }
+          - { label: "Google Maps URL", name: "maps_url", widget: "string", required: false }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Highlights (one per line)", name: "highlights", widget: "list" }
+          - { label: "Vendor Table Price", name: "vendor_price", widget: "string" }
+          - { label: "Number of Vendor Spots", name: "vendor_spots", widget: "number" }
+          - { label: "Vendor Description", name: "vendor_description", widget: "text" }
+          - label: "Banner Color"
+            name: "color"
+            widget: "select"
+            options:
+              - { label: "Coral → Yellow", value: "linear-gradient(135deg, #e8856a, #f5c842)" }
+              - { label: "Blue → Slate", value: "linear-gradient(135deg, #9ecad4, #7082a8)" }
+              - { label: "Slate → Blue", value: "linear-gradient(135deg, #7082a8, #9ecad4)" }
+              - { label: "Yellow → Coral", value: "linear-gradient(135deg, #f5c842, #e8856a)" }
+
+  - name: "wantlist"
+    label: "Want List & Buy Info"
+    file: "data/wantlist.json"
+    format: json
+    fields:
+      - { label: "Buying Intro Text", name: "buying_intro", widget: "text" }
+      - { label: "Conditions Accepted", name: "conditions_accepted", widget: "list" }
+      - { label: "Condition Note", name: "condition_note", widget: "text" }
+      - { label: "Contact Note", name: "contact_note", widget: "text" }
+      - label: "Want List"
+        name: "wantlist"
+        widget: "list"
+        fields:
+          - { label: "Set Name", name: "set", widget: "string" }
+          - label: "Cards"
+            name: "cards"
+            widget: "list"
+            fields:
+              - { label: "Card Name", name: "name", widget: "string" }
+              - { label: "Number", name: "number", widget: "string" }
+              - { label: "Condition", name: "condition", widget: "string" }
+              - label: "Priority"
+                name: "priority"
+                widget: "select"
+                options:
+                  - { label: "High", value: "high" }
+                  - { label: "Medium", value: "medium" }
+                  - { label: "Low", value: "low" }
+
+  - name: "shows"
+    label: "Upcoming Shows"
+    file: "data/shows.json"
+    format: json
+    fields:
+      - label: "Shows"
+        name: "shows"
+        widget: "list"
+        fields:
+          - { label: "Show Name", name: "name", widget: "string" }
+          - { label: "Date (e.g. Jun 21, 2026)", name: "date", widget: "string" }
+          - { label: "Venue Name", name: "location", widget: "string" }
+          - { label: "City, State", name: "city", widget: "string" }
+          - { label: "Table / Booth", name: "table", widget: "string" }
+          - { label: "Link URL (optional)", name: "url", widget: "string", required: false }
+
+  - name: "store"
+    label: "Store"
+    file: "data/products.json"
+    format: json
+    fields:
+      - label: "Products"
+        name: "products"
+        widget: "list"
+        fields:
+          - { label: "Product Name", name: "name", widget: "string" }
+          - label: "Category"
+            name: "category"
+            widget: "select"
+            options:
+              - { label: "Apparel", value: "apparel" }
+              - { label: "Accessories", value: "accessories" }
+              - { label: "Home & Decor", value: "home" }
+              - { label: "Gift Sets", value: "gifts" }
+          - { label: "Price ($)", name: "price", widget: "number", value_type: "int" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Icon (emoji)", name: "icon", widget: "string" }
+          - label: "Background Color"
+            name: "bg"
+            widget: "select"
+            options:
+              - { label: "Peach", value: "linear-gradient(135deg, #ffe0d0, #fff0e8)" }
+              - { label: "Teal", value: "linear-gradient(135deg, #d0f5f3, #e8fffe)" }
+              - { label: "Yellow", value: "linear-gradient(135deg, #fff8d0, #fffde8)" }
+              - { label: "Purple", value: "linear-gradient(135deg, #f5d0ff, #fde8ff)" }
+              - { label: "Blue", value: "linear-gradient(135deg, #d0e8ff, #e8f4ff)" }
+              - { label: "Green", value: "linear-gradient(135deg, #d0ffd8, #e8ffe8)" }
+              - { label: "Pink", value: "linear-gradient(135deg, #ffd0d0, #ffe8e8)" }
+              - { label: "Orange", value: "linear-gradient(135deg, #ffebd0, #fff5e8)" }

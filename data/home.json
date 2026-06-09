@@ -1,0 +1,31 @@
+{
+  "hero_title": "Come look at cards with us!",
+  "hero_subtitle": "Jetlagged Cards buys and sells singles, sealed and slabs! Come do deals with us at shows!",
+  "cta_primary_label": "Browse the Shop",
+  "cta_secondary_label": "Find Us at a Show",
+  "cta_banner_title": "Ready to add to your binder?",
+  "cta_banner_subtitle": "Whether you're chasing a grail card or building a budget deck, we're here to help you find it.",
+  "cta_banner_button": "Get in Touch",
+  "features": [
+    {
+      "icon": "✨",
+      "title": "Rare Singles & Holos",
+      "description": "From base set charizards to modern alt arts — we specialize in the cards collectors actually want."
+    },
+    {
+      "icon": "🌍",
+      "title": "Always on the Road",
+      "description": "We travel to shows across the country. Follow along and come say hi at our next stop!"
+    },
+    {
+      "icon": "📦",
+      "title": "Sealed Product Too",
+      "description": "Booster boxes, ETBs, and tins available in-store and at shows. Crack some packs with us."
+    },
+    {
+      "icon": "💎",
+      "title": "Near Mint Quality",
+      "description": "Every card is carefully inspected and graded before it hits our cases. No surprises."
+    }
+  ]
+}

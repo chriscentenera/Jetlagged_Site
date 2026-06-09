@@ -1,0 +1,36 @@
+{
+  "shows": [
+    {
+      "name": "Portland Card Con",
+      "date": "Jun 21, 2026",
+      "location": "Portland Convention Center",
+      "city": "Portland, OR",
+      "table": "Table B-14",
+      "url": ""
+    },
+    {
+      "name": "Seattle Collector Fest",
+      "date": "Jul 5, 2026",
+      "location": "Seattle Center Exhibition Hall",
+      "city": "Seattle, WA",
+      "table": "Table A-3",
+      "url": ""
+    },
+    {
+      "name": "Bay Area Card Show",
+      "date": "Jul 26, 2026",
+      "location": "San Jose Convention Center",
+      "city": "San Jose, CA",
+      "table": "Table C-22",
+      "url": ""
+    },
+    {
+      "name": "Denver Trading Expo",
+      "date": "Aug 9, 2026",
+      "location": "Denver Mart",
+      "city": "Denver, CO",
+      "table": "Table D-7",
+      "url": ""
+    }
+  ]
+}

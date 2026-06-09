@@ -1,0 +1,73 @@
+{
+  "shows": [
+    {
+      "id": "july-show",
+      "name": "Layover Card Show",
+      "date": "2026-07-05",
+      "display_date": "Saturday, July 5, 2026",
+      "time": "11am – 4pm",
+      "venue_name": "Richmond, BC",
+      "venue_address": "Richmond, BC",
+      "maps_url": "",
+      "description": "Our first ever hosted show! Come shop dozens of vendors, trade with fellow collectors, pull some packs, and hang out with the Vancouver card community. Free entry for attendees.",
+      "highlights": [
+        "20+ vendor tables",
+        "Free entry for attendees",
+        "Pack wars & door prizes",
+        "Grading drop-off station",
+        "Food & drinks on site"
+      ],
+      "vendor_price": "$60",
+      "vendor_spots": 20,
+      "vendor_description": "Grab a table and sell to hundreds of local collectors. Tables include a 6ft table and two chairs. Setup starts at 8am.",
+      "color": "linear-gradient(135deg, #e8856a, #f5c842)",
+      "embed_id": "showup-embed-tc9jjxtm",
+      "embed_src": "https://app.joinshowup.io/embed/layover-card-show/full"
+    },
+    {
+      "id": "august-show",
+      "name": "Dreamliner Card Show",
+      "date": "2026-08-01",
+      "display_date": "Saturday, August 1, 2026",
+      "time": "10am – 5pm",
+      "venue_name": "Richmond, BC",
+      "venue_address": "Richmond, BC",
+      "maps_url": "",
+      "description": "Round two! Building on the success of our July show, this one goes even bigger. More vendors, more prizes, and a live pack opening competition with cash prizes.",
+      "highlights": [
+        "30+ vendor tables",
+        "Free entry for attendees",
+        "Live pack opening competition",
+        "Cash prize pool",
+        "Grading drop-off station",
+        "Food trucks on site"
+      ],
+      "vendor_price": "$65",
+      "vendor_spots": 30,
+      "vendor_description": "Our biggest show yet. Tables fill up fast — lock in your spot early. Includes a 6ft table, two chairs, and early setup access from 8am.",
+      "color": "linear-gradient(135deg, #9ecad4, #7082a8)"
+    },
+    {
+      "id": "November-show",
+      "name": "Layover Card Show",
+      "date": "2026-11-6",
+      "display_date": "Saturday, November 6-7, 2026",
+      "time": "11am – 4pm",
+      "venue_name": "Richmond, BC",
+      "venue_address": "Richmond, BC",
+      "maps_url": "",
+      "description": "Our fourth stop for the layover card show! Come shop dozens of vendors, trade with fellow collectors, pull some packs, and hang out with the Vancouver card community. Free entry for attendees.",
+      "highlights": [
+        "30+ vendor tables",
+        "Free entry for attendees",
+        "Pack wars & door prizes",
+        "Grading drop-off station",
+        "Food & drinks on site"
+      ],
+      "vendor_price": "$60",
+      "vendor_spots": 20,
+      "vendor_description": "Grab a table and sell to hundreds of local collectors. Tables include a 6ft table and two chairs. Setup starts at 8am.",
+      "color": "linear-gradient(135deg, #e8856a, #f5c842)"
+    }
+  ]
+}

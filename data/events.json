@@ -1,0 +1,58 @@
+{
+  "events": [
+    {
+      "title": "Summer Sealed League",
+      "date": "Jun 14, 2026",
+      "location": "Battleground Games & Hobbies",
+      "time": "11am – 6pm",
+      "description": "Six weeks of sealed league play kicking off this summer. Build your pool, earn prizes, and trade between rounds.",
+      "button_label": "RSVP Free",
+      "gradient": "linear-gradient(to right, #e8856a, #f5c842)"
+    },
+    {
+      "title": "Vintage Card Night",
+      "date": "Jun 28, 2026",
+      "location": "Jetlagged Cards Pop-Up",
+      "time": "6pm – 9pm",
+      "description": "Bring your old binders! A dedicated evening for Base Set, Jungle, Fossil, and early era collectors to trade and show off their collections.",
+      "button_label": "Reserve Spot",
+      "gradient": "linear-gradient(to right, #9ecad4, #7082a8)"
+    },
+    {
+      "title": "Prerelease Weekend",
+      "date": "Jul 4, 2026",
+      "location": "Top Cut Games",
+      "time": "10am – 6pm",
+      "description": "Get your hands on the new set before anyone else. Prerelease packs, promos, and prizes up for grabs all weekend.",
+      "button_label": "Register Now",
+      "gradient": "linear-gradient(to right, #f5c842, #9ecad4)"
+    },
+    {
+      "title": "Regional Qualifier",
+      "date": "Jul 19, 2026",
+      "location": "Portland Convention Center",
+      "time": "8am – 8pm",
+      "description": "Competitive players — this is your chance. Standard format, best-of-three, with Regional Championship invites on the line.",
+      "button_label": "View Decklists",
+      "gradient": "linear-gradient(to right, #e8856a, #9ecad4)"
+    },
+    {
+      "title": "Draft & Trade Night",
+      "date": "Aug 2, 2026",
+      "location": "Jetlagged Cards Table",
+      "time": "7pm – 10pm",
+      "description": "Pack draft, then open trading for the rest of the night. Great way to fill holes in your collection without spending a fortune.",
+      "button_label": "Join In",
+      "gradient": "linear-gradient(to right, #7082a8, #f5c842)"
+    },
+    {
+      "title": "End of Summer Invitational",
+      "date": "Aug 23, 2026",
+      "location": "Main Event Gaming Center",
+      "time": "12pm – 8pm",
+      "description": "Invite-only tournament for our top regulars, with an open side event for everyone else. Huge prize pool, vendor area, and a live pack opening stream.",
+      "button_label": "RSVP Free",
+      "gradient": "linear-gradient(to right, #9ecad4, #e8856a)"
+    }
+  ]
+}

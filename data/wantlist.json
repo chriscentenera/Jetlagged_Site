@@ -1,0 +1,45 @@
+{
+  "buying_intro": "We're always buying! Whether you've got a single grail card or an entire collection to offload, we pay fair market prices and make the process easy. Bring cards to any show, or reach out to arrange a deal.",
+  "conditions_accepted": ["Near Mint", "Lightly Played", "Moderately Played"],
+  "condition_note": "We assess all cards in person or via photos. Heavily played and damaged cards are evaluated case by case.",
+  "contact_note": "See something on the want list you have? DM us on Instagram @jetlagged_cards or use the form below.",
+  "wantlist": [
+    {
+      "set": "Base Set",
+      "cards": [
+        { "name": "Charizard", "number": "4/102", "condition": "Any", "priority": "high" },
+        { "name": "Blastoise", "number": "2/102", "condition": "NM/LP", "priority": "medium" },
+        { "name": "Venusaur", "number": "15/102", "condition": "NM/LP", "priority": "medium" }
+      ]
+    },
+    {
+      "set": "Scarlet & Violet",
+      "cards": [
+        { "name": "Charizard ex SAR", "number": "234/165", "condition": "NM", "priority": "high" },
+        { "name": "Umbreon ex SAR", "number": "210/165", "condition": "NM", "priority": "high" },
+        { "name": "Miraidon ex SAR", "number": "243/165", "condition": "NM", "priority": "medium" }
+      ]
+    },
+    {
+      "set": "Twilight Masquerade",
+      "cards": [
+        { "name": "Teal Mask Ogerpon ex SAR", "number": "167/167", "condition": "NM", "priority": "high" },
+        { "name": "Bloodmoon Ursaluna ex SAR", "number": "182/167", "condition": "NM", "priority": "medium" }
+      ]
+    },
+    {
+      "set": "Crown Zenith",
+      "cards": [
+        { "name": "Charizard VSTAR GG", "number": "GG70/GG70", "condition": "NM", "priority": "medium" },
+        { "name": "Arceus VSTAR GG", "number": "GG70/GG70", "condition": "NM", "priority": "low" }
+      ]
+    },
+    {
+      "set": "Vintage (Jungle / Fossil / Team Rocket)",
+      "cards": [
+        { "name": "Any 1st Edition Holos", "number": "Various", "condition": "Any", "priority": "high" },
+        { "name": "Complete Sets (raw)", "number": "Various", "condition": "LP+", "priority": "medium" }
+      ]
+    }
+  ]
+}

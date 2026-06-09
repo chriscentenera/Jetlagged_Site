@@ -1,0 +1,36 @@
+{
+  "faqs": [
+    {
+      "question": "Where can I find you?",
+      "answer": "We're at card shows across the Vancouver area almost every weekend. Check the 'Find Us at a Show' section on our home page for upcoming dates and locations."
+    },
+    {
+      "question": "Do you ship cards?",
+      "answer": "Not at the moment — we're currently show-only. Follow us on Instagram @jetlagged_cards for updates if that changes."
+    },
+    {
+      "question": "How do you price your cards?",
+      "answer": "We price based on recent TCGPlayer market sales and PokeData. We aim to be competitive — if you find the same card cheaper somewhere reputable, let us know and we'll do our best to match it."
+    },
+    {
+      "question": "Do you buy cards?",
+      "answer": "Yes! We buy singles, sealed product, and slabs. Bring your cards to any show or send us a message through the 'Sell to Us' page and we'll get back to you within 24 hours."
+    },
+    {
+      "question": "What condition do you sell cards in?",
+      "answer": "We sell Near Mint (NM) and Lightly Played (LP) cards. Every card is inspected before it goes in the case. If a card has any notable wear we'll always disclose it."
+    },
+    {
+      "question": "Do you do trades?",
+      "answer": "Absolutely — trades are one of our favourite parts of the hobby. Find us at a show and bring your trade binder. We're always looking for the cards on our want list."
+    },
+    {
+      "question": "Do you sell sealed product?",
+      "answer": "Yes, we carry booster boxes, ETBs, tins, and blister packs at shows depending on what's in season. Stock varies so feel free to DM us ahead of time to check availability."
+    },
+    {
+      "question": "How do I get a vendor table at your shows?",
+      "answer": "Head to the 'Our Shows' page and fill out the vendor application for the show you're interested in. Tables go fast so apply early!"
+    }
+  ]
+}

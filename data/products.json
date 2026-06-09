@@ -1,0 +1,68 @@
+{
+  "products": [
+    {
+      "name": "Jetlagged Cards Tee",
+      "category": "apparel",
+      "price": 28,
+      "description": "Soft cotton tee with the Jetlagged Cards logo. Rep the brand at your next locals.",
+      "icon": "👕",
+      "bg": "linear-gradient(135deg, #ffe0d0, #fff0e8)"
+    },
+    {
+      "name": "Card Carry Tote",
+      "category": "accessories",
+      "price": 18,
+      "description": "Heavy-duty canvas tote — perfect for hauling binders, boxes, and sealed product to shows.",
+      "icon": "🎒",
+      "bg": "linear-gradient(135deg, #d0f5f3, #e8fffe)"
+    },
+    {
+      "name": "Holo Candle",
+      "category": "home",
+      "price": 22,
+      "description": "Hand-poured soy candle with a shimmer finish. Smells like a fresh pack. 40hr burn.",
+      "icon": "🕯️",
+      "bg": "linear-gradient(135deg, #fff8d0, #fffde8)"
+    },
+    {
+      "name": "Collector's Gift Box",
+      "category": "gifts",
+      "price": 55,
+      "description": "A curated bundle for any TCG fan — includes a promo card, sleeves, and Jetlagged merch.",
+      "icon": "🎁",
+      "bg": "linear-gradient(135deg, #f5d0ff, #fde8ff)"
+    },
+    {
+      "name": "Trainer Snapback",
+      "category": "apparel",
+      "price": 32,
+      "description": "Adjustable cap with embroidered Jetlagged Cards logo. Wear it to every show.",
+      "icon": "🧢",
+      "bg": "linear-gradient(135deg, #d0e8ff, #e8f4ff)"
+    },
+    {
+      "name": "Binder & Sleeve Pack",
+      "category": "accessories",
+      "price": 16,
+      "description": "9-pocket binder + 100 clear sleeves. Keep your collection looking fresh.",
+      "icon": "📓",
+      "bg": "linear-gradient(135deg, #d0ffd8, #e8ffe8)"
+    },
+    {
+      "name": "Card Art Print (12×16)",
+      "category": "home",
+      "price": 40,
+      "description": "Gallery-quality print inspired by classic card art. Frameable, wall-ready, totally rare.",
+      "icon": "🖼️",
+      "bg": "linear-gradient(135deg, #ffd0d0, #ffe8e8)"
+    },
+    {
+      "name": "Pack Crack Kit",
+      "category": "gifts",
+      "price": 48,
+      "description": "The ultimate ripping experience — a mystery assortment of packs, sleeves, and a surprise rare.",
+      "icon": "✨",
+      "bg": "linear-gradient(135deg, #ffebd0, #fff5e8)"
+    }
+  ]
+}

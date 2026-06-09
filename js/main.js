@@ -1,0 +1,410 @@
+// ── Navigation ────────────────────────────────────────────────────────────────
+
+function navigate(pageId) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+  document.getElementById(pageId).classList.add('active');
+  const link = document.querySelector(`.nav-links a[data-page="${pageId}"]`);
+  if (link) link.classList.add('active');
+  document.querySelector('.nav-links').classList.remove('open');
+  window.scrollTo(0, 0);
+}
+
+document.querySelectorAll('[data-page]').forEach(el => {
+  el.addEventListener('click', e => {
+    e.preventDefault();
+    navigate(el.dataset.page);
+  });
+});
+
+document.getElementById('hamburger').addEventListener('click', () => {
+  document.querySelector('.nav-links').classList.toggle('open');
+});
+
+// ── Toast ─────────────────────────────────────────────────────────────────────
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3500);
+}
+
+// ── Store filters ─────────────────────────────────────────────────────────────
+
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    document.querySelectorAll('.product-card').forEach(card => {
+      card.style.display = (filter === 'all' || card.dataset.category === filter) ? '' : 'none';
+    });
+  });
+});
+
+// ── Forms ─────────────────────────────────────────────────────────────────────
+
+document.getElementById('contactForm').addEventListener('submit', e => {
+  e.preventDefault();
+  showToast("🎉 Message sent! We'll get back to you soon.");
+  e.target.reset();
+});
+
+document.getElementById('sellForm').addEventListener('submit', e => {
+  e.preventDefault();
+  showToast("💌 Offer sent! We'll be in touch within 24 hours.");
+  e.target.reset();
+});
+
+// ── Countdown helpers ─────────────────────────────────────────────────────────
+
+function daysUntil(dateStr) {
+  const target = new Date(dateStr);
+  const now = new Date();
+  now.setHours(0, 0, 0, 0);
+  target.setHours(0, 0, 0, 0);
+  return Math.max(0, Math.ceil((target - now) / 86400000));
+}
+
+function countdownParts(dateStr) {
+  const target = new Date(dateStr);
+  const diff = Math.max(0, target - new Date());
+  return {
+    days:    Math.floor(diff / 86400000),
+    hours:   Math.floor((diff % 86400000) / 3600000),
+    minutes: Math.floor((diff % 3600000)  / 60000),
+    seconds: Math.floor((diff % 60000)    / 1000),
+  };
+}
+
+// ── Renderers ─────────────────────────────────────────────────────────────────
+
+function renderHome(data) {
+  document.getElementById('hero-title').textContent = data.hero_title;
+  document.getElementById('hero-subtitle').textContent = data.hero_subtitle;
+  document.getElementById('hero-cta-primary').textContent = data.cta_primary_label;
+  document.getElementById('hero-cta-secondary').textContent = data.cta_secondary_label;
+  document.getElementById('banner-title').textContent = data.cta_banner_title;
+  document.getElementById('banner-subtitle').textContent = data.cta_banner_subtitle;
+  document.getElementById('banner-btn').textContent = data.cta_banner_button;
+
+  document.getElementById('features-grid').innerHTML = data.features.map(f => `
+    <div class="feature-card">
+      <span class="feature-icon">${f.icon}</span>
+      <h3>${f.title}</h3>
+      <p>${f.description}</p>
+    </div>
+  `).join('');
+}
+
+function renderHostedPromo(shows) {
+  document.getElementById('hosted-promo').innerHTML = shows.map(s => {
+    const [year, mon, dy] = s.date.split('-').map(Number);
+    const d = new Date(year, mon - 1, dy);
+    const month = d.toLocaleString('default', { month: 'short' }).toUpperCase();
+    const day = d.getDate();
+    const days = daysUntil(s.date);
+    const daysLabel = days === 0 ? "TODAY!" : days === 1 ? "1 day away" : `${days} days away`;
+    return `
+      <a href="#" class="promo-card" data-page="our-shows">
+        <div class="promo-date-box" style="background: ${s.color};">
+          <div class="month">${month}</div>
+          <div class="day">${day}</div>
+        </div>
+        <div class="promo-text">
+          <div class="promo-label">🎪 We're Hosting</div>
+          <h3>${s.name}</h3>
+          <p>${s.venue_name} · ${s.time}</p>
+        </div>
+        <div class="promo-countdown">
+          <div class="days-num">${days}</div>
+          <div class="days-label">days to go</div>
+        </div>
+      </a>
+    `;
+  }).join('');
+
+  // Re-attach nav listeners for dynamically created [data-page] elements
+  document.querySelectorAll('.promo-card[data-page]').forEach(el => {
+    el.addEventListener('click', e => { e.preventDefault(); navigate(el.dataset.page); });
+  });
+}
+
+function renderHostedShows(shows) {
+  document.getElementById('hosted-shows-list').innerHTML = shows.map(s => {
+    const d = new Date(s.date);
+    const month = d.toLocaleString('default', { month: 'short' }).toUpperCase();
+    const day = d.getDate();
+    const c = countdownParts(s.date);
+    const highlightItems = s.highlights.map(h => `<li>${h}</li>`).join('');
+    const mapsLink = s.maps_url
+      ? `<a href="${s.maps_url}" target="_blank" class="btn btn-primary" style="font-size:.9rem;padding:.6rem 1.4rem;text-decoration:none;">📍 View Map</a>`
+      : '';
+
+    return `
+      <div class="hosted-show-card">
+        <div class="show-card-inner">
+          <div class="show-card-banner" style="background: ${s.color};">
+            <div class="show-badge">🎪 Hosted by Jetlagged Cards</div>
+            <h2>${s.name}</h2>
+            <div class="show-card-meta">
+              <span>📅 ${s.display_date}</span>
+              <span>🕐 ${s.time}</span>
+              <span>📍 ${s.venue_name}</span>
+            </div>
+          </div>
+
+          <div class="show-countdown-strip" style="background: ${s.color.replace('135deg', '135deg').replace(')', ', 0.85)')};">
+            <span style="color:white; font-weight:700; font-size:0.9rem;">Countdown:</span>
+            <div class="countdown-boxes">
+              <div class="cbox"><span class="cnum" id="cd-${s.id}-d">${c.days}</span><span class="clabel">days</span></div>
+              <div class="cbox"><span class="cnum" id="cd-${s.id}-h">${c.hours}</span><span class="clabel">hrs</span></div>
+              <div class="cbox"><span class="cnum" id="cd-${s.id}-m">${c.minutes}</span><span class="clabel">min</span></div>
+              <div class="cbox"><span class="cnum" id="cd-${s.id}-s">${c.seconds}</span><span class="clabel">sec</span></div>
+            </div>
+          </div>
+
+          <div class="show-card-body">
+            <div>
+              <p class="show-description">${s.description}</p>
+              <div class="show-section-label">What to Expect</div>
+              <ul class="highlights-list">${highlightItems}</ul>
+              ${mapsLink}
+            </div>
+
+            <div>
+              <div class="show-section-label">Vendor Tables</div>
+              <div class="vendor-box">
+                <div class="vendor-price">${s.vendor_price} <span style="font-size:1rem;font-weight:400;color:#9a8070;">/ table</span></div>
+                <div class="vendor-spots">🪑 ${s.vendor_spots} tables available</div>
+                <p class="vendor-desc">${s.vendor_description}</p>
+                <div class="show-section-label" style="margin-top:0;">Apply for a Table</div>
+                <form class="vendor-form" id="vendor-form-${s.id}">
+                  <div class="form-group">
+                    <label>Your Name / Business</label>
+                    <input type="text" placeholder="Trainer's Card Shop" required />
+                  </div>
+                  <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="you@example.com" required />
+                  </div>
+                  <div class="form-group">
+                    <label>What will you be selling?</label>
+                    <textarea placeholder="Singles, sealed, accessories…" required></textarea>
+                  </div>
+                  <button type="submit" class="submit-btn">Request a Table →</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        ${s.embed_src ? `
+        <div class="show-embed">
+          <iframe
+            id="${s.embed_id}"
+            src="${s.embed_src}"
+            width="100%"
+            height="1400"
+            frameborder="0"
+            loading="lazy"
+            title="${s.name} – Full Event Page"
+            style="border: none; border-radius: 8px; width: 100%;">
+          </iframe>
+        </div>` : ''}
+      </div>
+    `;
+  }).join('');
+
+  // Attach vendor form submit handlers
+  shows.forEach(s => {
+    document.getElementById(`vendor-form-${s.id}`).addEventListener('submit', e => {
+      e.preventDefault();
+      showToast(`🎪 Table request sent for ${s.name}! We'll confirm within 48 hours.`);
+      e.target.reset();
+    });
+  });
+
+  // Tick countdown every second
+  setInterval(() => {
+    shows.forEach(s => {
+      const c = countdownParts(s.date);
+      const dEl = document.getElementById(`cd-${s.id}-d`);
+      if (dEl) {
+        dEl.textContent = c.days;
+        document.getElementById(`cd-${s.id}-h`).textContent = c.hours;
+        document.getElementById(`cd-${s.id}-m`).textContent = c.minutes;
+        document.getElementById(`cd-${s.id}-s`).textContent = c.seconds;
+      }
+    });
+  }, 1000);
+}
+
+function renderEvents(data) {
+  document.getElementById('events-grid').innerHTML = data.events.map(ev => `
+    <div class="event-card">
+      <div class="event-banner" style="background: ${ev.gradient};"></div>
+      <div class="event-card-body">
+        <span class="event-date">${ev.date}</span>
+        <h3>${ev.title}</h3>
+        <p>${ev.description}</p>
+        <div class="event-meta">
+          <span>📍 ${ev.location}</span>
+          <span>🕐 ${ev.time}</span>
+        </div>
+        <button class="btn btn-primary" style="font-size:.9rem;padding:.6rem 1.4rem;">${ev.button_label}</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderStore(data) {
+  const grid = document.getElementById('store-grid');
+  grid.innerHTML = data.products.map(p => `
+    <div class="product-card" data-category="${p.category}">
+      <div class="product-img" style="background: ${p.bg};">${p.icon}</div>
+      <div class="product-body">
+        <div class="product-tag">${p.category}</div>
+        <h3>${p.name}</h3>
+        <p>${p.description}</p>
+        <div class="product-footer">
+          <span class="price">$${p.price}</span>
+          <button class="add-btn">+ Add</button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+
+  grid.querySelectorAll('.add-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const name = btn.closest('.product-card').querySelector('h3').textContent;
+      showToast(`✓ "${name}" added to cart!`);
+    });
+  });
+}
+
+function renderShows(data) {
+  document.getElementById('shows-list').innerHTML = data.shows.map(s => {
+    const [month, day] = s.date.split(' ');
+    const linkHtml = s.url
+      ? `<a href="${s.url}" target="_blank" class="show-link">Details →</a>`
+      : `<span class="show-link" style="opacity:0.4;cursor:default;">TBA</span>`;
+    return `
+      <div class="show-row">
+        <div class="show-date-box">
+          <div class="month">${month}</div>
+          <div class="day">${parseInt(day)}</div>
+        </div>
+        <div class="show-info">
+          <h3>${s.name}</h3>
+          <div class="show-meta">
+            <span>📍 ${s.location}</span>
+            <span>${s.city}</span>
+          </div>
+          <span class="show-table-badge">🪑 ${s.table}</span>
+        </div>
+        ${linkHtml}
+      </div>
+    `;
+  }).join('');
+}
+
+function renderSell(data) {
+  document.getElementById('buying-intro').textContent = data.buying_intro;
+  document.getElementById('contact-note').textContent = data.contact_note;
+  document.getElementById('condition-note').textContent = data.condition_note;
+
+  document.getElementById('conditions-list').innerHTML = data.conditions_accepted
+    .map(c => `<li>${c}</li>`).join('');
+
+  document.getElementById('wantlist').innerHTML = data.wantlist.map(set => `
+    <div class="wantlist-set">
+      <div class="wantlist-set-header">${set.set}</div>
+      ${set.cards.map(card => `
+        <div class="wantlist-card-row">
+          <div>
+            <span class="wantlist-card-name">${card.name}</span>
+            <span class="wantlist-card-num">${card.number}</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:0.5rem;">
+            <span class="wantlist-card-cond">${card.condition}</span>
+            <span class="priority-badge priority-${card.priority}">${card.priority}</span>
+          </div>
+        </div>
+      `).join('')}
+    </div>
+  `).join('');
+}
+
+function renderAbout(data) {
+  document.getElementById('about-tagline').textContent = data.tagline;
+  document.getElementById('about-cta-text').textContent = data.cta;
+  document.getElementById('about-story').innerHTML = data.story
+    .map(p => `<p>${p}</p>`).join('');
+  document.getElementById('about-values').innerHTML = data.values
+    .map(v => `
+      <div class="feature-card">
+        <span class="feature-icon">${v.icon}</span>
+        <h3>${v.title}</h3>
+        <p>${v.description}</p>
+      </div>
+    `).join('');
+}
+
+function renderFaq(data) {
+  document.getElementById('faq-list').innerHTML = data.faqs.map((f, i) => `
+    <div class="faq-item" id="faq-${i}">
+      <button class="faq-question" onclick="toggleFaq(${i})">
+        <span>${f.question}</span>
+        <span class="faq-chevron">▾</span>
+      </button>
+      <div class="faq-answer"><p>${f.answer}</p></div>
+    </div>
+  `).join('');
+}
+
+// ── Bootstrap ─────────────────────────────────────────────────────────────────
+
+Promise.all([
+  fetch('data/home.json').then(r => r.json()),
+  fetch('data/events.json').then(r => r.json()),
+  fetch('data/products.json').then(r => r.json()),
+  fetch('data/shows.json').then(r => r.json()),
+  fetch('data/hosted-shows.json').then(r => r.json()),
+  fetch('data/wantlist.json').then(r => r.json()),
+  fetch('data/about.json').then(r => r.json()),
+  fetch('data/faq.json').then(r => r.json()),
+]).then(([home, events, products, shows, hostedShows, wantlist, about, faq]) => {
+  renderHome(home);
+  renderHostedPromo(hostedShows.shows);
+  renderHostedShows(hostedShows.shows);
+  renderEvents(events);
+  renderStore(products);
+  renderShows(shows);
+  renderSell(wantlist);
+  renderAbout(about);
+  renderFaq(faq);
+}).catch(err => console.error('Failed to load content:', err));
+
+function toggleFaq(i) {
+  const item = document.getElementById(`faq-${i}`);
+  item.classList.toggle('open');
+}
+
+// ── Showup embed resize ───────────────────────────────────────────────────────
+window.addEventListener('message', function(e) {
+  if (e.data && e.data.type === 'showup-embed-resize' && e.data.height) {
+    var f = document.getElementById('showup-embed-tc9jjxtm');
+    if (f) f.style.height = e.data.height + 'px';
+  }
+});
+
+// ── Netlify Identity ──────────────────────────────────────────────────────────
+
+if (window.netlifyIdentity) {
+  window.netlifyIdentity.on('init', user => {
+    if (!user) {
+      window.netlifyIdentity.on('login', () => { document.location.href = '/admin/'; });
+    }
+  });
+}

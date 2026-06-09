@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jetlagged Cards — Pokémon TCG Singles & Sealed</title>
+  <link rel="icon" href="images/logo.jpg" type="image/jpeg" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo-img" data-page="home">
+    <img src="images/logo.jpg" alt="Jetlagged Cards" class="nav-logo-img-el" />
+  </a>
+  <ul class="nav-links">
+    <li><a href="#" data-page="home" class="active">Home</a></li>
+    <li><a href="#" data-page="our-shows">Our Shows</a></li>
+    <li><a href="#" data-page="events">Events</a></li>
+    <li><a href="#" data-page="store">Shop</a></li>
+    <li><a href="#" data-page="sell">Sell to Us</a></li>
+    <li><a href="#" data-page="about">About</a></li>
+    <li><a href="#" data-page="faq">FAQ</a></li>
+    <li><a href="#" data-page="gallery">Gallery</a></li>
+    <li><a href="#" data-page="contact">Contact</a></li>
+    <li><a href="https://instagram.com/jetlagged_cards" target="_blank" class="nav-instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="ig-icon" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg> Instagram</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ===== HOME PAGE ===== -->
+<div id="home" class="page active">
+
+  <div class="hero">
+    <div class="hero-content">
+      <img src="images/logo.jpg" alt="Jetlagged Cards" class="hero-logo" />
+      <div class="hero-tagline">✈️ Vancouver, BC &nbsp;·&nbsp; Est. 2025</div>
+      <h1 id="hero-title">Loading…</h1>
+      <p id="hero-subtitle"></p>
+      <a href="#" class="btn btn-primary" id="hero-cta-primary" data-page="store"></a>
+      <a href="#" class="btn btn-outline" id="hero-cta-secondary" data-page="our-shows"></a>
+    </div>
+  </div>
+
+  <!-- Hosted Shows Promo Banner -->
+  <section class="hosted-promo" id="hosted-promo"></section>
+
+  <section class="features">
+    <h2 class="section-title">What We're All About</h2>
+    <p class="section-subtitle">Collectors run by collectors — we know what you're hunting for.</p>
+    <div class="accent-line"></div>
+    <div class="features-grid" id="features-grid"></div>
+  </section>
+
+  <section class="shows-section">
+    <h2 class="section-title">Find Us at a Show</h2>
+    <p class="section-subtitle">We hit almost every card show in the Vancouver area — come pull up to our table!</p>
+    <div class="accent-line"></div>
+    <div class="shows-list" id="shows-list"></div>
+  </section>
+
+  <section id="cta-banner" style="background: linear-gradient(135deg, #e8856a, #f5c842); text-align: center; color: white; padding: 5rem 2rem;">
+    <h2 id="banner-title" style="font-size: 2.4rem; font-weight: 900; margin-bottom: 1rem;"></h2>
+    <p id="banner-subtitle" style="font-size: 1.1rem; opacity: 0.9; margin-bottom: 2rem;"></p>
+    <a href="#" class="btn" id="banner-btn" style="background: white; color: var(--primary); font-weight: 700;" data-page="contact"></a>
+  </section>
+
+</div>
+
+<!-- ===== OUR SHOWS PAGE ===== -->
+<div id="our-shows" class="page">
+  <div class="our-shows-header">
+    <h1>🎪 Our Shows</h1>
+    <p>We're hosting two Vancouver card shows in 2026 — here's everything you need to know.</p>
+  </div>
+  <div id="hosted-shows-list"></div>
+</div>
+
+<!-- ===== EVENTS PAGE ===== -->
+<div id="events" class="page">
+  <div class="events-header">
+    <h1>Events & Tournaments</h1>
+    <p>Show up, battle it out, and maybe walk away with something rare.</p>
+  </div>
+  <div class="events-grid" id="events-grid"></div>
+</div>
+
+<!-- ===== STORE PAGE ===== -->
+<div id="store" class="page">
+  <div class="store-header">
+    <h1>The Card Shop</h1>
+    <p>Singles, sealed, and everything in between — browse the current inventory.</p>
+  </div>
+  <div class="store-filters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="apparel">Apparel</button>
+    <button class="filter-btn" data-filter="accessories">Accessories</button>
+    <button class="filter-btn" data-filter="home">Home &amp; Decor</button>
+    <button class="filter-btn" data-filter="gifts">Gift Sets</button>
+  </div>
+  <div class="store-grid" id="store-grid"></div>
+</div>
+
+<!-- ===== SELL TO US PAGE ===== -->
+<div id="sell" class="page">
+  <div class="sell-header">
+    <h1>Sell to Us</h1>
+    <p>We pay fair market prices — bring your cards to any show or reach out online.</p>
+  </div>
+
+  <div class="sell-layout">
+
+    <!-- Left col: how it works + conditions -->
+    <div class="sell-info">
+      <p id="buying-intro" class="sell-intro"></p>
+
+      <h3 class="sell-subheading">✅ Conditions We Accept</h3>
+      <ul class="conditions-list" id="conditions-list"></ul>
+      <p id="condition-note" class="condition-note"></p>
+
+      <h3 class="sell-subheading">📬 How to Reach Us</h3>
+      <p id="contact-note" class="sell-contact-note"></p>
+
+      <form class="contact-form sell-form" id="sellForm" style="margin-top: 2rem;">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" placeholder="Ash Ketchum" required />
+        </div>
+        <div class="form-group">
+          <label>Email or Instagram</label>
+          <input type="text" placeholder="@yourhandle or email@example.com" required />
+        </div>
+        <div class="form-group">
+          <label>What are you selling?</label>
+          <textarea placeholder="e.g. Base Set Charizard LP, full Scarlet & Violet set, bulk commons, etc." required style="min-height:100px;"></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Send Offer →</button>
+      </form>
+    </div>
+
+    <!-- Right col: want list -->
+    <div class="wantlist-col">
+      <h3 class="sell-subheading">🔥 Current Want List</h3>
+      <p style="color:#9a8070; font-size:0.9rem; margin-bottom:1.5rem;">Cards we're actively hunting — if you have these, we definitely want to talk.</p>
+      <div id="wantlist"></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== CONTACT PAGE ===== -->
+<div id="contact" class="page">
+  <div class="contact-header">
+    <h1>Send Us a Message</h1>
+    <p>Chasing a grail? Got a trade offer? We're all ears.</p>
+  </div>
+  <div class="contact-layout">
+    <div class="contact-info">
+      <h2>Let's talk cards.</h2>
+      <p>Whether you're looking for a specific card, want to know our show schedule, or just want to geek out about the TCG — reach out, we love hearing from fellow collectors.</p>
+      <div class="info-item">
+        <div class="info-icon" style="background:#fff0e8;">📍</div>
+        <div><h4>Based In</h4><p>Vancouver, BC, Canada</p></div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon" style="background:#fff8e8;">✉️</div>
+        <div><h4>Email</h4><p>hello@jetlaggedcards.com</p></div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon" style="background:#e8fff9;">📸</div>
+        <div><h4>Instagram</h4><p>@jetlagged_cards</p></div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon" style="background:#f0e8ff;">🕐</div>
+        <div><h4>Response Time</h4><p>Usually within 24 hours<br/>(We might be at a show!)</p></div>
+      </div>
+    </div>
+    <form class="contact-form" id="contactForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" placeholder="Ash" required />
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" placeholder="Ketchum" required />
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" placeholder="ash@pokemonmaster.com" required />
+      </div>
+      <div class="form-group">
+        <label>What's this about?</label>
+        <select required>
+          <option value="" disabled selected>Pick a topic…</option>
+          <option>Looking for a Specific Card</option>
+          <option>Trade Inquiry</option>
+          <option>Show / Event Question</option>
+          <option>Order & Shipping</option>
+          <option>Wholesale / Partnership</option>
+          <option>Just Saying Hi!</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea placeholder="Tell us what you're hunting for, or just say hi…" required></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Send It →</button>
+    </form>
+  </div>
+</div>
+
+<!-- ===== ABOUT PAGE ===== -->
+<div id="about" class="page">
+  <div class="about-header">
+    <h1>About Us</h1>
+    <p id="about-tagline"></p>
+  </div>
+  <div class="about-story" id="about-story"></div>
+  <section class="features" style="background: #fff8f0;">
+    <h2 class="section-title">What We Stand For</h2>
+    <div class="accent-line"></div>
+    <div class="features-grid" id="about-values"></div>
+  </section>
+  <div class="about-cta">
+    <p id="about-cta-text"></p>
+    <a href="#" class="btn btn-primary" data-page="our-shows">Find Us at a Show</a>
+  </div>
+</div>
+
+<!-- ===== FAQ PAGE ===== -->
+<div id="faq" class="page">
+  <div class="faq-header">
+    <h1>Frequently Asked Questions</h1>
+    <p>Everything you need to know before you come find us.</p>
+  </div>
+  <div class="faq-list" id="faq-list"></div>
+</div>
+
+<!-- ===== GALLERY PAGE ===== -->
+<div id="gallery" class="page">
+  <div class="gallery-header">
+    <h1>Gallery</h1>
+    <p>Cards, shows, and everything in between — follow along on Instagram.</p>
+  </div>
+  <div class="instagram-embed">
+    <div class="instagram-cta">
+      <div class="instagram-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div>
+      <h2>@jetlagged_cards</h2>
+      <p>Follow us on Instagram for card pulls, show updates, new inventory, and behind-the-scenes from the road.</p>
+      <a href="https://instagram.com/jetlagged_cards" target="_blank" class="btn btn-primary">Follow on Instagram</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <img src="images/logo.jpg" alt="Jetlagged Cards" class="footer-logo" />
+  <div class="footer-links">
+    <a href="https://instagram.com/jetlagged_cards" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="ig-icon" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg> @jetlagged_cards</a>
+    <a href="mailto:hello@jetlaggedcards.com">✉️ hello@jetlaggedcards.com</a>
+  </div>
+  <p>© 2026 <span>Jetlagged Cards</span> — Catching flights & chasing holos. ✈️</p>
+</footer>
+
+<div class="toast" id="toast"></div>
+<script src="js/main.js"></script>
+</body>
+</html>

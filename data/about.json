@@ -1,0 +1,31 @@
+{
+  "tagline": "Collectors on the move.",
+  "story": [
+    "Jetlagged Cards started the way most things in this hobby do — with a love for the cards and a bit of an obsession that got out of hand.",
+    "We started buying and selling at local Vancouver shows in 2025, and it quickly became something we couldn't stop. There's nothing better than connecting collectors with the cards they've been hunting for, or picking up a collection from someone who's ready to pass it on.",
+    "The name comes from the lifestyle — always on the road, always at a new show, running on coffee and pack adrenaline. We travel to shows across BC and beyond, and we bring our full setup every time."
+  ],
+  "values": [
+    {
+      "icon": "🤝",
+      "title": "Fair Deals",
+      "description": "We price competitively and pay fair on buys. No low-balling, no games."
+    },
+    {
+      "icon": "🔍",
+      "title": "Honest Grading",
+      "description": "Every card is inspected. If there's wear, we'll tell you before you ask."
+    },
+    {
+      "icon": "✈️",
+      "title": "Always Travelling",
+      "description": "We're at shows constantly. If you can't find us online, you'll find us at a table."
+    },
+    {
+      "icon": "❤️",
+      "title": "Collectors First",
+      "description": "We're collectors ourselves. We know what it means to finally find that grail card."
+    }
+  ],
+  "cta": "Come find us at a show — we'd love to meet you."
+}
