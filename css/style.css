@@ -1294,12 +1294,14 @@ footer span { color: var(--primary); }
   .hero { padding: 3rem 1rem 2.5rem; }
   .hero p { font-size: 1rem; }
 
-  /* Promo cards: stack date+countdown vertically */
-  .promo-card { flex-wrap: wrap; }
-  .promo-text { min-width: 0; flex: 1 1 100%; order: 2; }
-  .promo-date-box { order: 1; }
-  .promo-countdown { order: 3; flex-direction: row; align-items: center; gap: 0.4rem; }
-  .promo-countdown .days-label { font-size: 0.65rem; }
+  /* Promo cards: keep date | text | countdown row, just tighter */
+  .promo-card { padding: 1rem; gap: 0.75rem; }
+  .promo-date-box { min-width: 48px; padding: 0.4rem 0.5rem; }
+  .promo-date-box .day { font-size: 1.5rem; }
+  .promo-text h3 { font-size: 0.95rem; }
+  .promo-text p { font-size: 0.8rem; }
+  .promo-countdown .days-num { font-size: 1.4rem; }
+  .promo-countdown .days-label { font-size: 0.6rem; }
 
   /* Show card countdown */
   .countdown-boxes { flex-wrap: wrap; }
