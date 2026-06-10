@@ -30,18 +30,6 @@ function showToast(msg) {
   setTimeout(() => t.classList.remove('show'), 3500);
 }
 
-// ── Store filters ─────────────────────────────────────────────────────────────
-
-document.querySelectorAll('.filter-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const filter = btn.dataset.filter;
-    document.querySelectorAll('.product-card').forEach(card => {
-      card.style.display = (filter === 'all' || card.dataset.category === filter) ? '' : 'none';
-    });
-  });
-});
 
 // ── Forms ─────────────────────────────────────────────────────────────────────
 
@@ -260,8 +248,10 @@ function renderEvents(data) {
 
 function renderStore(data) {
   const grid = document.getElementById('store-grid');
+  let activeFilter = 'all';
+
   grid.innerHTML = data.products.map(p => `
-    <div class="product-card" data-category="${p.category}">
+    <div class="product-card" data-category="${p.category}" data-name="${p.name.toLowerCase()}">
       <div class="product-img" style="background: ${p.bg};">${p.icon}</div>
       <div class="product-body">
         <div class="product-tag">${p.category}</div>
@@ -279,6 +269,26 @@ function renderStore(data) {
     btn.addEventListener('click', () => {
       const name = btn.closest('.product-card').querySelector('h3').textContent;
       showToast(`✓ "${name}" added to cart!`);
+    });
+  });
+
+  function applyFilters() {
+    const query = document.getElementById('store-search').value.toLowerCase().trim();
+    grid.querySelectorAll('.product-card').forEach(card => {
+      const matchesCategory = activeFilter === 'all' || card.dataset.category === activeFilter;
+      const matchesSearch = !query || card.dataset.name.includes(query);
+      card.style.display = matchesCategory && matchesSearch ? '' : 'none';
+    });
+  }
+
+  document.getElementById('store-search').addEventListener('input', applyFilters);
+
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeFilter = btn.dataset.filter;
+      applyFilters();
     });
   });
 }
@@ -391,13 +401,46 @@ function toggleFaq(i) {
   item.classList.toggle('open');
 }
 
-// ── Showup embed resize ───────────────────────────────────────────────────────
-window.addEventListener('message', function(e) {
-  if (e.data && e.data.type === 'showup-embed-resize' && e.data.height) {
-    var f = document.getElementById('showup-embed-tc9jjxtm');
-    if (f) f.style.height = e.data.height + 'px';
+// ── Showup embed resize + scroll ─────────────────────────────────────────────
+(function() {
+  var embedIds = ['showup-embed-tc9jjxtm', 'showup-embed-qsujf990'];
+
+  function postScroll(f) {
+    if (!f || !f.contentWindow) return;
+    var r = f.getBoundingClientRect();
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    var visibleTop = Math.max(0, -r.top);
+    var visibleBottom = Math.min(r.height, vh - r.top);
+    var visibleHeight = Math.max(0, visibleBottom - visibleTop);
+    try { f.contentWindow.postMessage({ type: 'showup-embed-parent-scroll', visibleTop: visibleTop, visibleHeight: visibleHeight }, '*'); } catch(_) {}
   }
-});
+
+  window.addEventListener('message', function(e) {
+    if (!e.data) return;
+    embedIds.forEach(function(id) {
+      var f = document.getElementById(id);
+      if (!f) return;
+      if (e.data.type === 'showup-embed-resize' && e.data.height) {
+        f.style.height = e.data.height + 'px';
+        postScroll(f);
+      } else if (e.data.type === 'showup-embed-request-scroll') {
+        postScroll(f);
+      }
+    });
+  });
+
+  window.addEventListener('scroll', function() {
+    embedIds.forEach(function(id) { postScroll(document.getElementById(id)); });
+  }, { passive: true });
+
+  window.addEventListener('resize', function() {
+    embedIds.forEach(function(id) { postScroll(document.getElementById(id)); });
+  });
+
+  setTimeout(function() {
+    embedIds.forEach(function(id) { postScroll(document.getElementById(id)); });
+  }, 100);
+})();
 
 // ── Netlify Identity ──────────────────────────────────────────────────────────
 

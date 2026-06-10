@@ -45,7 +45,9 @@
       "vendor_price": "$65",
       "vendor_spots": 30,
       "vendor_description": "Our biggest show yet. Tables fill up fast — lock in your spot early. Includes a 6ft table, two chairs, and early setup access from 8am.",
-      "color": "linear-gradient(135deg, #9ecad4, #7082a8)"
+      "color": "linear-gradient(135deg, #9ecad4, #7082a8)",
+      "embed_id": "showup-embed-qsujf990",
+      "embed_src": "https://app.joinshowup.io/embed/the-dreamliner-show/full"
     },
     {
       "id": "November-show",

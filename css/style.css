@@ -413,6 +413,27 @@ section { padding: 5rem 2rem; }
 .store-header h1 { font-size: 3rem; font-weight: 900; }
 .store-header p { font-size: 1.1rem; opacity: 0.9; margin-top: 0.5rem; }
 
+.store-search-wrap {
+  max-width: 480px;
+  margin: 2rem auto 0;
+  padding: 0 2rem;
+}
+
+.store-search-wrap input {
+  width: 100%;
+  padding: 0.8rem 1.2rem;
+  border: 2px solid #f0dfc0;
+  border-radius: 50px;
+  font-size: 1rem;
+  outline: none;
+  background: white;
+  color: var(--dark);
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.store-search-wrap input:focus { border-color: var(--primary); }
+
 .store-filters {
   display: flex;
   gap: 0.5rem;
@@ -1178,4 +1199,123 @@ footer span { color: var(--primary); }
   line-height: 1.7;
   margin-bottom: 2rem;
   font-size: 1.05rem;
+}
+
+/* Promo cards: switch to vertical stack before they orphan */
+@media (max-width: 1000px) {
+  .hosted-promo { flex-direction: column; align-items: center; }
+  .promo-card { min-width: 0; width: 100%; max-width: 560px; }
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+
+  /* Headers */
+  .our-shows-header h1,
+  .events-header h1,
+  .store-header h1,
+  .sell-header h1,
+  .contact-header h1,
+  .about-header h1,
+  .faq-header h1,
+  .gallery-header h1 { font-size: 2.2rem; }
+
+  .section-title { font-size: 1.8rem; }
+
+  /* Hero */
+  .hero-logo { width: 160px; height: 160px; }
+  .hero { padding: 4rem 1.5rem 3rem; }
+
+  /* Promo cards */
+  .hosted-promo { padding: 2rem 1rem; gap: 1rem; flex-direction: column; align-items: center; }
+  .promo-card {
+    min-width: 0;
+    width: 100%;
+    max-width: 520px;
+    padding: 1.25rem;
+    gap: 1rem;
+  }
+  .promo-text h3 { font-size: 1rem; }
+  .promo-countdown .days-num { font-size: 1.5rem; }
+
+  /* Show card */
+  .show-countdown-strip {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
+  }
+  .show-card-banner { padding: 1.5rem; }
+  .show-card-banner h2 { font-size: 1.6rem; }
+  .show-card-meta { gap: 0.4rem 1rem; font-size: 0.85rem; }
+  .hosted-show-card { padding: 0 1rem; margin: 1.5rem auto; }
+  .show-card-body { padding: 1.5rem; gap: 1.5rem; }
+  .show-embed { padding: 0 1rem; }
+
+  /* Shows list */
+  .show-row { grid-template-columns: 70px 1fr; gap: 1rem; padding: 1rem; }
+
+  /* Events */
+  .events-grid { grid-template-columns: 1fr; padding: 2rem 1rem; }
+
+  /* Store */
+  .store-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); padding: 1.5rem 1rem; }
+
+  /* Contact / Sell / Forms */
+  .form-row { grid-template-columns: 1fr; }
+  .contact-form { padding: 1.5rem; }
+
+  /* Sell wantlist: un-stick on mobile */
+  .wantlist-col { position: static; }
+
+  /* Sections */
+  section { padding: 3rem 1.5rem; }
+
+  /* About */
+  .about-story { padding: 2.5rem 1.5rem; }
+  .about-cta { padding: 2.5rem 1.5rem; }
+}
+
+@media (max-width: 480px) {
+
+  /* Headers */
+  .our-shows-header h1,
+  .events-header h1,
+  .store-header h1,
+  .sell-header h1,
+  .contact-header h1,
+  .about-header h1,
+  .faq-header h1,
+  .gallery-header h1 { font-size: 1.8rem; }
+
+  /* Hero */
+  .hero-logo { width: 130px; height: 130px; }
+  .hero { padding: 3rem 1rem 2.5rem; }
+  .hero p { font-size: 1rem; }
+
+  /* Promo cards: stack date+countdown vertically */
+  .promo-card { flex-wrap: wrap; }
+  .promo-text { min-width: 0; flex: 1 1 100%; order: 2; }
+  .promo-date-box { order: 1; }
+  .promo-countdown { order: 3; flex-direction: row; align-items: center; gap: 0.4rem; }
+  .promo-countdown .days-label { font-size: 0.65rem; }
+
+  /* Show card countdown */
+  .countdown-boxes { flex-wrap: wrap; }
+  .cbox { min-width: 44px; padding: 0.3rem 0.5rem; }
+  .cbox .cnum { font-size: 1.1rem; }
+
+  /* Store grid: single column */
+  .store-grid { grid-template-columns: 1fr; }
+
+  /* Features grid: single column */
+  .features-grid { grid-template-columns: 1fr; }
+
+  /* Toast: full width at bottom */
+  .toast { left: 1rem; right: 1rem; bottom: 1rem; text-align: center; }
+
+  /* Section padding */
+  section { padding: 2.5rem 1rem; }
+  .section-title { font-size: 1.6rem; }
 }
