@@ -17,6 +17,13 @@ document.querySelectorAll('[data-page]').forEach(el => {
   });
 });
 
+document.querySelectorAll('[data-scroll]').forEach(el => {
+  el.addEventListener('click', e => {
+    e.preventDefault();
+    document.getElementById(el.dataset.scroll).scrollIntoView({ behavior: 'smooth' });
+  });
+});
+
 document.getElementById('hamburger').addEventListener('click', () => {
   document.querySelector('.nav-links').classList.toggle('open');
 });
