@@ -1,36 +1,36 @@
 {
   "shows": [
     {
-      "name": "Portland Card Con",
-      "date": "Jun 21, 2026",
-      "location": "Portland Convention Center",
-      "city": "Portland, OR",
-      "table": "Table B-14",
-      "url": ""
+      "name": "Royal City Centre Card Show",
+      "date": "June 14, 2026",
+      "location": "Royal City Centre",
+      "city": "New Westminster, BC",
+      "table": "Table 1-2",
+      "url": "https://www.instagram.com/p/DYPtH0pxXYX/"
     },
     {
-      "name": "Seattle Collector Fest",
+      "name": "Coastal Collectibles Convention",
+      "date": "June 21, 2026",
+      "location": "South Hall Banquet Hall",
+      "city": "Vancouver, BC",
+      "table": "91",
+      "url": "https://www.instagram.com/p/DX93oxutSqy/"
+    },
+    {
+      "name": "Layover Card Show",
       "date": "Jul 5, 2026",
-      "location": "Seattle Center Exhibition Hall",
-      "city": "Seattle, WA",
-      "table": "Table A-3",
-      "url": ""
+      "location": "Richmond Rod and Gun Club Hall",
+      "city": "Richmond, BC",
+      "table": "18",
+      "url": "https://www.instagram.com/p/DXuf0vAD-Dy/"
     },
     {
-      "name": "Bay Area Card Show",
-      "date": "Jul 26, 2026",
-      "location": "San Jose Convention Center",
-      "city": "San Jose, CA",
-      "table": "Table C-22",
-      "url": ""
-    },
-    {
-      "name": "Denver Trading Expo",
-      "date": "Aug 9, 2026",
-      "location": "Denver Mart",
-      "city": "Denver, CO",
-      "table": "Table D-7",
-      "url": ""
+      "name": "Dreamliner Show",
+      "date": "Aug 1, 2026",
+      "location": "Richmond Curling Club",
+      "city": "Richmond, BC",
+      "table": "Table 78-80",
+      "url": "https://www.instagram.com/p/DV68uWslOQw/"
     }
   ]
 }
