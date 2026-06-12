@@ -172,7 +172,29 @@ function renderHostedShows(shows) {
               <div class="show-section-label">Vendor Tables</div>
               <div class="vendor-box">
                 <p class="vendor-desc">${s.vendor_description}</p>
-                ${s.showup_url ? `<a href="${s.showup_url}" target="_blank" class="btn btn-primary" style="display:inline-block;text-decoration:none;font-size:0.95rem;">Apply for a Table on ShowUp →</a>` : ''}
+                ${s.vendor_tiers ? `
+                  <div class="vendor-tiers-grid">
+                    ${s.vendor_tiers.map(t => `
+                      <div class="vendor-tier-chip${t.sold_out ? ' sold-out' : ''}">
+                        <div class="tier-name">${t.name}</div>
+                        <div class="tier-price">${t.price}</div>
+                        ${t.sold_out ? '<div class="tier-soldout">SOLD OUT</div>' : ''}
+                      </div>
+                    `).join('')}
+                  </div>
+                ` : ''}
+                ${s.vendor_bulk ? `
+                  <div class="vendor-bulk-label">Bulk discounts</div>
+                  <div class="vendor-bulk-list">
+                    ${s.vendor_bulk.map(b => `
+                      <div class="vendor-bulk-row">
+                        <span class="bulk-qty">${b.min}+ tables</span>
+                        <span class="bulk-discount">${b.discount}</span>
+                      </div>
+                    `).join('')}
+                  </div>
+                ` : ''}
+                ${s.showup_url ? `<a href="${s.showup_url}" target="_blank" class="btn btn-primary" style="display:inline-block;text-decoration:none;font-size:0.95rem;margin-top:1.25rem;">Apply for a Table on ShowUp →</a>` : ''}
               </div>
             </div>
           </div>

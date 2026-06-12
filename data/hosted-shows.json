@@ -41,7 +41,17 @@
         "Stamp rally",
         "Lounge area"
       ],
-      "vendor_description": "Tiered table pricing — Economy $110 · Premium $125 · Business $140 (sold out). Bulk discounts: 3+ tables save $5 each, 6+ save $10, 10+ save $15. Apply on ShowUp to lock in your spot.",
+      "vendor_description": "Secure your spot at the biggest free card show in the Lower Mainland.",
+      "vendor_tiers": [
+        { "name": "Economy", "price": "$110", "sold_out": false },
+        { "name": "Premium", "price": "$125", "sold_out": false },
+        { "name": "Business", "price": "$140", "sold_out": true }
+      ],
+      "vendor_bulk": [
+        { "min": 3, "discount": "$5 off / table" },
+        { "min": 6, "discount": "$10 off / table" },
+        { "min": 10, "discount": "$15 off / table" }
+      ],
       "showup_url": "https://app.joinshowup.io/apply/the-dreamliner-show",
       "color": "linear-gradient(135deg, #9ecad4, #7082a8)"
     },

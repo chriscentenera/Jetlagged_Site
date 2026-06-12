@@ -908,6 +908,94 @@ section { padding: 5rem 2rem; }
   margin-bottom: 1.5rem;
 }
 
+/* Vendor tier pricing chips */
+.vendor-tiers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+.vendor-tier-chip {
+  border: 2px solid #f0dfc0;
+  border-radius: 12px;
+  padding: 0.85rem 0.5rem;
+  text-align: center;
+  background: #fffaf5;
+}
+
+.vendor-tier-chip.sold-out {
+  background: #f5f0eb;
+  border-color: #e0d5c8;
+  opacity: 0.65;
+}
+
+.tier-name {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #9a8070;
+  margin-bottom: 0.3rem;
+}
+
+.tier-price {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--primary);
+}
+
+.vendor-tier-chip.sold-out .tier-price {
+  text-decoration: line-through;
+  color: #b0a090;
+}
+
+.tier-soldout {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #c0a898;
+  margin-top: 0.2rem;
+  text-transform: uppercase;
+}
+
+/* Bulk discounts */
+.vendor-bulk-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #9a8070;
+  margin-bottom: 0.5rem;
+}
+
+.vendor-bulk-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 0.5rem;
+}
+
+.vendor-bulk-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff8f0;
+  border-radius: 8px;
+  padding: 0.45rem 0.85rem;
+  font-size: 0.85rem;
+}
+
+.bulk-qty {
+  font-weight: 600;
+  color: #5a4535;
+}
+
+.bulk-discount {
+  font-weight: 700;
+  color: var(--primary);
+}
+
 /* Vendor application form inside show card */
 .vendor-form .form-group { margin-bottom: 0.9rem; }
 .vendor-form .form-group label { font-size: 0.82rem; }
