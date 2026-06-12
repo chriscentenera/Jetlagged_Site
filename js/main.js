@@ -171,54 +171,15 @@ function renderHostedShows(shows) {
             <div>
               <div class="show-section-label">Vendor Tables</div>
               <div class="vendor-box">
-                <div class="vendor-price">${s.vendor_price} <span style="font-size:1rem;font-weight:400;color:#9a8070;">/ table</span></div>
-                <div class="vendor-spots">🪑 ${s.vendor_spots} tables available</div>
                 <p class="vendor-desc">${s.vendor_description}</p>
-                <div class="show-section-label" style="margin-top:0;">Apply for a Table</div>
-                <form class="vendor-form" id="vendor-form-${s.id}">
-                  <div class="form-group">
-                    <label>Your Name / Business</label>
-                    <input type="text" placeholder="Trainer's Card Shop" required />
-                  </div>
-                  <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" placeholder="you@example.com" required />
-                  </div>
-                  <div class="form-group">
-                    <label>What will you be selling?</label>
-                    <textarea placeholder="Singles, sealed, accessories…" required></textarea>
-                  </div>
-                  <button type="submit" class="submit-btn">Request a Table →</button>
-                </form>
+                ${s.showup_url ? `<a href="${s.showup_url}" target="_blank" class="btn btn-primary" style="display:inline-block;text-decoration:none;font-size:0.95rem;">Apply for a Table on ShowUp →</a>` : ''}
               </div>
             </div>
           </div>
         </div>
-        ${s.embed_src ? `
-        <div class="show-embed">
-          <iframe
-            id="${s.embed_id}"
-            src="${s.embed_src}"
-            width="100%"
-            height="1400"
-            frameborder="0"
-            loading="lazy"
-            title="${s.name} – Full Event Page"
-            style="border: none; border-radius: 8px; width: 100%;">
-          </iframe>
-        </div>` : ''}
       </div>
     `;
   }).join('');
-
-  // Attach vendor form submit handlers
-  shows.forEach(s => {
-    document.getElementById(`vendor-form-${s.id}`).addEventListener('submit', e => {
-      e.preventDefault();
-      showToast(`🎪 Table request sent for ${s.name}! We'll confirm within 48 hours.`);
-      e.target.reset();
-    });
-  });
 
   // Tick countdown every second
   setInterval(() => {
@@ -408,46 +369,6 @@ function toggleFaq(i) {
   item.classList.toggle('open');
 }
 
-// ── Showup embed resize + scroll ─────────────────────────────────────────────
-(function() {
-  var embedIds = ['showup-embed-tc9jjxtm', 'showup-embed-qsujf990'];
-
-  function postScroll(f) {
-    if (!f || !f.contentWindow) return;
-    var r = f.getBoundingClientRect();
-    var vh = window.innerHeight || document.documentElement.clientHeight;
-    var visibleTop = Math.max(0, -r.top);
-    var visibleBottom = Math.min(r.height, vh - r.top);
-    var visibleHeight = Math.max(0, visibleBottom - visibleTop);
-    try { f.contentWindow.postMessage({ type: 'showup-embed-parent-scroll', visibleTop: visibleTop, visibleHeight: visibleHeight }, '*'); } catch(_) {}
-  }
-
-  window.addEventListener('message', function(e) {
-    if (!e.data) return;
-    embedIds.forEach(function(id) {
-      var f = document.getElementById(id);
-      if (!f) return;
-      if (e.data.type === 'showup-embed-resize' && e.data.height) {
-        f.style.height = e.data.height + 'px';
-        postScroll(f);
-      } else if (e.data.type === 'showup-embed-request-scroll') {
-        postScroll(f);
-      }
-    });
-  });
-
-  window.addEventListener('scroll', function() {
-    embedIds.forEach(function(id) { postScroll(document.getElementById(id)); });
-  }, { passive: true });
-
-  window.addEventListener('resize', function() {
-    embedIds.forEach(function(id) { postScroll(document.getElementById(id)); });
-  });
-
-  setTimeout(function() {
-    embedIds.forEach(function(id) { postScroll(document.getElementById(id)); });
-  }, 100);
-})();
 
 // ── Netlify Identity ──────────────────────────────────────────────────────────
 

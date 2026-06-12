@@ -17,12 +17,9 @@
         "Grading drop-off station",
         "Food & drinks on site"
       ],
-      "vendor_price": "$60",
-      "vendor_spots": 20,
       "vendor_description": "Grab a table and sell to hundreds of local collectors. Tables include a 6ft table and two chairs. Setup starts at 8am.",
-      "color": "linear-gradient(135deg, #e8856a, #f5c842)",
-      "embed_id": "showup-embed-tc9jjxtm",
-      "embed_src": "https://app.joinshowup.io/embed/layover-card-show/full"
+      "showup_url": "https://app.joinshowup.io/layover-card-show",
+      "color": "linear-gradient(135deg, #e8856a, #f5c842)"
     },
     {
       "id": "august-show",
@@ -42,12 +39,9 @@
         "Grading drop-off station",
         "Food trucks on site"
       ],
-      "vendor_price": "$65",
-      "vendor_spots": 30,
       "vendor_description": "Our biggest show yet. Tables fill up fast — lock in your spot early. Includes a 6ft table, two chairs, and early setup access from 8am.",
-      "color": "linear-gradient(135deg, #9ecad4, #7082a8)",
-      "embed_id": "showup-embed-qsujf990",
-      "embed_src": "https://app.joinshowup.io/embed/the-dreamliner-show/full"
+      "showup_url": "https://app.joinshowup.io/the-dreamliner-show",
+      "color": "linear-gradient(135deg, #9ecad4, #7082a8)"
     },
     {
       "id": "November-show",
@@ -66,9 +60,8 @@
         "Grading drop-off station",
         "Food & drinks on site"
       ],
-      "vendor_price": "$60",
-      "vendor_spots": 20,
       "vendor_description": "Grab a table and sell to hundreds of local collectors. Tables include a 6ft table and two chairs. Setup starts at 8am.",
+      "showup_url": "https://app.joinshowup.io/organizer/jetlagged-card",
       "color": "linear-gradient(135deg, #e8856a, #f5c842)"
     }
   ]
