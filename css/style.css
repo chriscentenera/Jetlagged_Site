@@ -587,17 +587,69 @@ section { padding: 5rem 2rem; }
     background: #fff8ee;
     border-bottom: 2px solid #f0dfc0;
     flex-direction: column;
-    padding: 1rem;
-    gap: 0.25rem;
-    box-shadow: 0 4px 12px rgba(92,59,46,0.1);
+    padding: 0.4rem 0 0.6rem;
+    gap: 0;
+    box-shadow: 0 8px 24px rgba(92,59,46,0.12);
+    z-index: 999;
   }
 
   .nav-links.open { display: flex; }
 
+  .nav-links li {
+    display: block;
+    border-bottom: 1px solid #f0dfc0;
+  }
+
+  .nav-links li:last-child { border-bottom: none; }
+
   .nav-links a {
     display: block;
-    padding: 0.75rem 1rem;
+    padding: 0.85rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border-left: 3px solid transparent;
+    color: #7a6555;
+    background: none;
+    height: auto;
+    line-height: 1.4;
   }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    background: #fff0e8;
+    color: var(--primary);
+    border-left-color: var(--primary);
+  }
+
+  /* Instagram icon — separated by a top rule */
+  .nav-links li:last-child {
+    border-top: 1px solid #f0dfc0;
+    margin-top: 0.25rem;
+    padding-top: 0.25rem;
+  }
+
+  .nav-links .nav-instagram {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    gap: 0.6rem;
+    border-left: 3px solid transparent;
+  }
+
+  .nav-links .nav-instagram::after {
+    content: "@jetlagged_cards";
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #7a6555;
+  }
+
+  .nav-links .nav-instagram:hover,
+  .nav-links .nav-instagram.active {
+    background: #fff0e8;
+    border-left-color: var(--primary);
+  }
+
+  .nav-links .nav-instagram:hover::after { color: var(--primary); }
 }
 
 .contact-info h2 { font-size: 1.6rem; margin-bottom: 1rem; color: var(--dark); }
