@@ -194,7 +194,7 @@ function renderHostedShows(shows) {
                     `).join('')}
                   </div>
                 ` : ''}
-                ${s.showup_url ? `<a href="${s.showup_url}" target="_blank" class="btn btn-primary" style="display:inline-block;text-decoration:none;font-size:0.95rem;margin-top:1.25rem;">Apply for a Table on ShowUp →</a>` : ''}
+                ${s.showup_url ? `<a href="${s.showup_url}" target="_blank" class="btn btn-primary showup-apply-btn">Apply for a Table on ShowUp →</a>` : ''}
               </div>
             </div>
           </div>
