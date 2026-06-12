@@ -711,6 +711,25 @@ section { padding: 5rem 2rem; }
 .our-shows-header h1 { font-size: 3rem; font-weight: 900; }
 .our-shows-header p { font-size: 1.1rem; opacity: 0.9; margin-top: 0.5rem; }
 
+.showup-profile-link {
+  display: inline-block;
+  margin-top: 1.25rem;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.6rem 1.4rem;
+  border-radius: 50px;
+  border: 2px solid rgba(255,255,255,0.5);
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.showup-profile-link:hover {
+  background: rgba(255,255,255,0.35);
+  border-color: white;
+}
+
 /* Home promo strip for hosted shows */
 .hosted-promo {
   background: var(--dark);
