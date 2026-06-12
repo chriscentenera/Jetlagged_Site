@@ -169,8 +169,8 @@ function renderHostedShows(shows) {
             </div>
 
             <div>
-              <div class="show-section-label">Vendor Tables</div>
               <div class="vendor-box">
+                <div class="show-section-label" style="margin-bottom:0.85rem;">Vendor Tables</div>
                 <p class="vendor-desc">${s.vendor_description}</p>
                 ${s.vendor_tiers ? `
                   <div class="vendor-tiers-grid">
@@ -194,7 +194,10 @@ function renderHostedShows(shows) {
                     `).join('')}
                   </div>
                 ` : ''}
-                ${s.showup_url ? `<a href="${s.showup_url}" target="_blank" class="btn btn-primary showup-apply-btn">Apply for a Table on ShowUp →</a>` : ''}
+                ${s.showup_url ? `
+                  <a href="${s.showup_url}" target="_blank" class="btn btn-primary showup-apply-btn">Apply for a Table on ShowUp →</a>
+                  <p class="showup-attribution">Vendor applications powered by <a href="https://joinshowup.io" target="_blank">ShowUp</a></p>
+                ` : ''}
               </div>
             </div>
           </div>

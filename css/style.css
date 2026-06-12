@@ -882,7 +882,7 @@ section { padding: 5rem 2rem; }
 }
 
 .show-countdown-strip {
-  background: rgba(0,0,0,0.15);
+  background: rgba(0,0,0,0.18);
   padding: 1rem 2.5rem;
   display: flex;
   align-items: center;
@@ -895,15 +895,16 @@ section { padding: 5rem 2rem; }
 }
 
 .cbox {
-  background: rgba(255,255,255,0.15);
+  background: white;
   border-radius: 8px;
   padding: 0.4rem 0.7rem;
   text-align: center;
   min-width: 52px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
-.cbox .cnum { font-size: 1.4rem; font-weight: 900; color: white; line-height: 1; display: block; }
-.cbox .clabel { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.7); }
+.cbox .cnum { font-size: 1.4rem; font-weight: 900; color: var(--primary); line-height: 1; display: block; }
+.cbox .clabel { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 1px; color: #9a8070; }
 
 .show-card-body {
   background: #fffbf4;
@@ -1047,6 +1048,21 @@ section { padding: 5rem 2rem; }
   font-weight: 700;
   color: var(--primary);
 }
+
+.showup-attribution {
+  text-align: center;
+  font-size: 0.75rem;
+  color: #b0a090;
+  margin-top: 0.6rem;
+}
+
+.showup-attribution a {
+  color: #9a8070;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.showup-attribution a:hover { color: var(--primary); }
 
 /* ShowUp apply button — consistent across all show cards */
 .showup-apply-btn {
