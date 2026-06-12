@@ -2,6 +2,7 @@
   "shows": [
     {
       "id": "july-show",
+      "active": true,
       "name": "Layover Card Show",
       "date": "2026-07-05",
       "display_date": "Saturday, July 5, 2026",
@@ -18,11 +19,12 @@
         "Food & drinks on site"
       ],
       "vendor_description": "Grab a table and sell to hundreds of local collectors. Tables include a 6ft table and two chairs. Setup starts at 8am.",
-      "showup_url": "https://app.joinshowup.io/layover-card-show",
+      "showup_url": "https://app.joinshowup.io/apply/layover-card-show",
       "color": "linear-gradient(135deg, #e8856a, #f5c842)"
     },
     {
       "id": "august-show",
+      "active": true,
       "name": "Dreamliner Card Show",
       "date": "2026-08-01",
       "display_date": "Saturday, August 1, 2026",
@@ -40,11 +42,12 @@
         "Food trucks on site"
       ],
       "vendor_description": "Our biggest show yet. Tables fill up fast — lock in your spot early. Includes a 6ft table, two chairs, and early setup access from 8am.",
-      "showup_url": "https://app.joinshowup.io/the-dreamliner-show",
+      "showup_url": "https://app.joinshowup.io/apply/the-dreamliner-show",
       "color": "linear-gradient(135deg, #9ecad4, #7082a8)"
     },
     {
       "id": "November-show",
+      "active": false,
       "name": "Layover Card Show",
       "date": "2026-11-6",
       "display_date": "Saturday, November 6-7, 2026",

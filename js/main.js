@@ -94,7 +94,7 @@ function renderHome(data) {
 }
 
 function renderHostedPromo(shows) {
-  document.getElementById('hosted-promo').innerHTML = shows.map(s => {
+  document.getElementById('hosted-promo').innerHTML = shows.filter(s => s.active !== false).map(s => {
     const [year, mon, dy] = s.date.split('-').map(Number);
     const d = new Date(year, mon - 1, dy);
     const month = d.toLocaleString('default', { month: 'short' }).toUpperCase();
@@ -127,7 +127,7 @@ function renderHostedPromo(shows) {
 }
 
 function renderHostedShows(shows) {
-  document.getElementById('hosted-shows-list').innerHTML = shows.map(s => {
+  document.getElementById('hosted-shows-list').innerHTML = shows.filter(s => s.active !== false).map(s => {
     const d = new Date(s.date);
     const month = d.toLocaleString('default', { month: 'short' }).toUpperCase();
     const day = d.getDate();
@@ -183,7 +183,7 @@ function renderHostedShows(shows) {
 
   // Tick countdown every second
   setInterval(() => {
-    shows.forEach(s => {
+    shows.filter(s => s.active !== false).forEach(s => {
       const c = countdownParts(s.date);
       const dEl = document.getElementById(`cd-${s.id}-d`);
       if (dEl) {
