@@ -717,6 +717,13 @@ section { padding: 5rem 2rem; }
 
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 
+.form-hint {
+  display: block;
+  font-size: 0.78rem;
+  color: #9a8070;
+  margin-top: 0.4rem;
+}
+
 .submit-btn {
   width: 100%;
   padding: 1rem;
