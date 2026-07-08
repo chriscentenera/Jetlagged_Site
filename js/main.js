@@ -241,6 +241,7 @@ function renderEvents(data) {
 
 function renderStore(data) {
   const grid = document.getElementById('store-grid');
+  if (!grid) return; // Shop is under construction — no product grid to render
   let activeFilter = 'all';
 
   grid.innerHTML = data.products.map(p => `
