@@ -40,6 +40,67 @@
         { "name": "Any 1st Edition Holos", "number": "Various", "condition": "Any", "priority": "high" },
         { "name": "Complete Sets (raw)", "number": "Various", "condition": "LP+", "priority": "medium" }
       ]
+    },
+    {
+      "set": "Angela's Wishlist",
+      "cards": [
+        { "name": "Any Eeveelution cards", "number": "Various", "condition": "NM/LP", "priority": "high" }
+      ]
+    },
+    {
+      "set": "Greg's Wishlist",
+      "cards": [
+        { "name": "Tokiya cards", "number": "Various", "condition": "NM/LP", "priority": "high" },
+        { "name": "Ditto", "number": "39/113", "condition": "NM/LP, SDCC Stamp", "priority": "high" },
+        { "name": "Ditto", "number": "51", "condition": "NM/LP, Skyridge Reverse Holo", "priority": "high" }
+      ]
+    },
+    {
+      "set": "Chris' Wishlist",
+      "cards": [
+        { "name": "Chansey", "number": "113", "condition": "NM/LP, Vending Series 1 (Blue)", "priority": "high" }
+      ]
+    },
+    {
+      "set": "Chaos Rising",
+      "cards": [
+        { "name": "Cinccino ex", "number": "119/086", "condition": "NM", "priority": "medium" },
+        { "name": "Ampharos", "number": "090/086", "condition": "NM", "priority": "medium" },
+        { "name": "Xerneas", "number": "091/086", "condition": "NM", "priority": "medium" },
+        { "name": "Frogadier", "number": "089/086", "condition": "NM", "priority": "medium" },
+        { "name": "Froakie", "number": "088/086", "condition": "NM", "priority": "medium" }
+      ]
+    },
+    {
+      "set": "Perfect Order",
+      "cards": [
+        { "name": "Meowth ex", "number": "121/088", "condition": "NM", "priority": "medium" },
+        { "name": "Mega Zygarde ex", "number": "120/088", "condition": "NM", "priority": "medium" },
+        { "name": "Rosa's Encouragement", "number": "123/088", "condition": "NM", "priority": "medium" },
+        { "name": "Mega Clefable ex", "number": "119/088", "condition": "NM", "priority": "medium" },
+        { "name": "Mega Starmie ex", "number": "118/088", "condition": "NM", "priority": "medium" },
+        { "name": "Clefairy", "number": "094/088", "condition": "NM", "priority": "medium" },
+        { "name": "Dedenne", "number": "093/088", "condition": "NM", "priority": "medium" },
+        { "name": "Rowlet", "number": "090/088", "condition": "NM", "priority": "medium" },
+        { "name": "Espurr", "number": "095/088", "condition": "NM", "priority": "medium" },
+        { "name": "Aurorus", "number": "092/088", "condition": "NM", "priority": "medium" },
+        { "name": "Spewpa", "number": "089/088", "condition": "NM", "priority": "medium" }
+      ]
+    },
+    {
+      "set": "Phantasmal Flames",
+      "cards": [
+        { "name": "Mega Charizard X ex", "number": "125/094", "condition": "NM", "priority": "medium" },
+        { "name": "Dawn", "number": "129/094", "condition": "NM", "priority": "medium" },
+        { "name": "Meowth", "number": "106/094", "condition": "NM", "priority": "medium" },
+        { "name": "Piplup", "number": "098/094", "condition": "NM", "priority": "medium" },
+        { "name": "Wigglytuff", "number": "105/094", "condition": "NM", "priority": "medium" },
+        { "name": "Flygon", "number": "101/094", "condition": "NM", "priority": "medium" },
+        { "name": "Dewgong", "number": "097/094", "condition": "NM", "priority": "medium" },
+        { "name": "Paldean Wooper", "number": "102/094", "condition": "NM", "priority": "medium" },
+        { "name": "Yamper", "number": "099/094", "condition": "NM", "priority": "medium" },
+        { "name": "Ludicolo", "number": "095/094", "condition": "NM", "priority": "medium" }
+      ]
     }
   ]
 }
