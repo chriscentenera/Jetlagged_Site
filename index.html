@@ -86,7 +86,12 @@
     <h1>Events & Tournaments</h1>
     <p>Show up, battle it out, and maybe walk away with something rare.</p>
   </div>
-  <div class="events-grid" id="events-grid"></div>
+  <div class="under-construction">
+    <div class="under-construction-icon">🚧</div>
+    <h2>Under Construction</h2>
+    <p>Our events calendar is being built. Check back soon — in the meantime, come find us at a show!</p>
+    <a href="#" class="btn btn-primary" data-page="our-shows">Find Us at a Show</a>
+  </div>
 </div>
 
 <!-- ===== STORE PAGE ===== -->
@@ -146,14 +151,32 @@
       </form>
     </div>
 
-    <!-- Right col: want list -->
-    <div class="wantlist-col">
-      <h3 class="sell-subheading">🔥 Current Want List</h3>
-      <p style="color:#9a8070; font-size:0.9rem; margin-bottom:1.5rem;">Cards we're actively hunting — if you have these, we definitely want to talk.</p>
-      <div id="wantlist"></div>
+  </div>
+
+  <!-- Want list: full-width, below the form -->
+  <section class="wantlist-section">
+    <h3 class="sell-subheading">🔥 Current Want List</h3>
+    <p class="wantlist-intro">Cards we're actively hunting — if you have these, we definitely want to talk.</p>
+
+    <div class="wantlist-controls">
+      <input type="search" id="wantlist-search" placeholder="Search by card name…" autocomplete="off" />
+      <div class="wantlist-priority-filters" id="wantlist-priority-filters">
+        <button class="wl-filter-btn active" data-priority="all">All</button>
+        <button class="wl-filter-btn" data-priority="high">High</button>
+        <button class="wl-filter-btn" data-priority="medium">Medium</button>
+        <button class="wl-filter-btn" data-priority="low">Low</button>
+      </div>
     </div>
 
-  </div>
+    <div class="wantlist-legend">
+      <span><span class="priority-badge priority-high">high</span> most wanted</span>
+      <span><span class="priority-badge priority-medium">medium</span> keen to buy</span>
+      <span><span class="priority-badge priority-low">low</span> nice to have</span>
+    </div>
+
+    <div id="wantlist"></div>
+    <p class="wantlist-empty" id="wantlist-empty" hidden>No cards match your search.</p>
+  </section>
 </div>
 
 <!-- ===== CONTACT PAGE ===== -->

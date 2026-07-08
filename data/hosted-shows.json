@@ -1,28 +1,6 @@
 {
   "shows": [
     {
-      "id": "july-show",
-      "active": true,
-      "name": "Layover Card Show",
-      "date": "2026-07-05",
-      "display_date": "Sunday, July 5, 2026",
-      "time": "11am – 4pm",
-      "venue_name": "RRCG Hall",
-      "venue_address": "7891 Cambie Rd., Richmond, BC V6X 1X7",
-      "maps_url": "",
-      "description": "Our 3rd edition of the Layover Card Show! Same great place, same crazy energy — we had over 450 people last time, let's break that record! Giveaways all day, free admission, and free parking. Right outside Aberdeen Canada Line station.",
-      "highlights": [
-        "Free admission",
-        "Free giveaways all day",
-        "Free parking",
-        "Steps from Aberdeen Canada Line station",
-        "Vendor tables sold out — join the waitlist"
-      ],
-      "vendor_description": "All tables are sold out! If you're still interested in vending, contact us to be added to the waitlist.",
-      "showup_url": "https://app.joinshowup.io/apply/layover-card-show",
-      "color": "linear-gradient(135deg, #e8856a, #f5c842)"
-    },
-    {
       "id": "august-show",
       "active": true,
       "name": "The Dreamliner Show",

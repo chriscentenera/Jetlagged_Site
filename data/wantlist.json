@@ -5,50 +5,15 @@
   "contact_note": "See something on the want list you have? DM us on Instagram @jetlagged_cards or use the form below.",
   "wantlist": [
     {
-      "set": "Base Set",
-      "cards": [
-        { "name": "Charizard", "number": "4/102", "condition": "Any", "priority": "high" },
-        { "name": "Blastoise", "number": "2/102", "condition": "NM/LP", "priority": "medium" },
-        { "name": "Venusaur", "number": "15/102", "condition": "NM/LP", "priority": "medium" }
-      ]
-    },
-    {
-      "set": "Scarlet & Violet",
-      "cards": [
-        { "name": "Charizard ex SAR", "number": "234/165", "condition": "NM", "priority": "high" },
-        { "name": "Umbreon ex SAR", "number": "210/165", "condition": "NM", "priority": "high" },
-        { "name": "Miraidon ex SAR", "number": "243/165", "condition": "NM", "priority": "medium" }
-      ]
-    },
-    {
-      "set": "Twilight Masquerade",
-      "cards": [
-        { "name": "Teal Mask Ogerpon ex SAR", "number": "167/167", "condition": "NM", "priority": "high" },
-        { "name": "Bloodmoon Ursaluna ex SAR", "number": "182/167", "condition": "NM", "priority": "medium" }
-      ]
-    },
-    {
-      "set": "Crown Zenith",
-      "cards": [
-        { "name": "Charizard VSTAR GG", "number": "GG70/GG70", "condition": "NM", "priority": "medium" },
-        { "name": "Arceus VSTAR GG", "number": "GG70/GG70", "condition": "NM", "priority": "low" }
-      ]
-    },
-    {
-      "set": "Vintage (Jungle / Fossil / Team Rocket)",
-      "cards": [
-        { "name": "Any 1st Edition Holos", "number": "Various", "condition": "Any", "priority": "high" },
-        { "name": "Complete Sets (raw)", "number": "Various", "condition": "LP+", "priority": "medium" }
-      ]
-    },
-    {
       "set": "Angela's Wishlist",
+      "type": "wishlist",
       "cards": [
         { "name": "Any Eeveelution cards", "number": "Various", "condition": "NM/LP", "priority": "high" }
       ]
     },
     {
       "set": "Greg's Wishlist",
+      "type": "wishlist",
       "cards": [
         { "name": "Tokiya cards", "number": "Various", "condition": "NM/LP", "priority": "high" },
         { "name": "Ditto", "number": "39/113", "condition": "NM/LP, SDCC Stamp", "priority": "high" },
@@ -57,12 +22,14 @@
     },
     {
       "set": "Chris' Wishlist",
+      "type": "wishlist",
       "cards": [
         { "name": "Chansey", "number": "113", "condition": "NM/LP, Vending Series 1 (Blue)", "priority": "high" }
       ]
     },
     {
       "set": "Chaos Rising",
+      "type": "set",
       "cards": [
         { "name": "Cinccino ex", "number": "119/086", "condition": "NM", "priority": "medium" },
         { "name": "Ampharos", "number": "090/086", "condition": "NM", "priority": "medium" },
@@ -73,6 +40,7 @@
     },
     {
       "set": "Perfect Order",
+      "type": "set",
       "cards": [
         { "name": "Meowth ex", "number": "121/088", "condition": "NM", "priority": "medium" },
         { "name": "Mega Zygarde ex", "number": "120/088", "condition": "NM", "priority": "medium" },
@@ -89,6 +57,7 @@
     },
     {
       "set": "Phantasmal Flames",
+      "type": "set",
       "cards": [
         { "name": "Mega Charizard X ex", "number": "125/094", "condition": "NM", "priority": "medium" },
         { "name": "Dawn", "number": "129/094", "condition": "NM", "priority": "medium" },

@@ -222,7 +222,9 @@ function renderHostedShows(shows) {
 }
 
 function renderEvents(data) {
-  document.getElementById('events-grid').innerHTML = data.events.map(ev => `
+  const grid = document.getElementById('events-grid');
+  if (!grid) return; // Events page is under construction — no grid to render
+  grid.innerHTML = data.events.map(ev => `
     <div class="event-card">
       <div class="event-banner" style="background: ${ev.gradient};"></div>
       <div class="event-card-body">
@@ -321,11 +323,22 @@ function renderSell(data) {
   document.getElementById('conditions-list').innerHTML = data.conditions_accepted
     .map(c => `<li>${c}</li>`).join('');
 
-  document.getElementById('wantlist').innerHTML = data.wantlist.map(set => `
+  renderWantlist(data.wantlist);
+}
+
+const PRIORITY_ORDER = { high: 0, medium: 1, low: 2 };
+
+function renderWantlist(wantlist) {
+  const container = document.getElementById('wantlist');
+  if (!container) return;
+
+  const groupHtml = groups => groups.map(set => `
     <div class="wantlist-set">
       <div class="wantlist-set-header">${set.set}</div>
-      ${set.cards.map(card => `
-        <div class="wantlist-card-row">
+      ${[...set.cards]
+        .sort((a, b) => PRIORITY_ORDER[a.priority] - PRIORITY_ORDER[b.priority])
+        .map(card => `
+        <div class="wantlist-card-row" data-name="${card.name.toLowerCase()}" data-priority="${card.priority}">
           <div>
             <span class="wantlist-card-name">${card.name}</span>
             <span class="wantlist-card-num">${card.number}</span>
@@ -338,6 +351,70 @@ function renderSell(data) {
       `).join('')}
     </div>
   `).join('');
+
+  const wishlists = wantlist.filter(g => g.type === 'wishlist');
+  const sets = wantlist.filter(g => g.type !== 'wishlist');
+
+  container.innerHTML = `
+    ${wishlists.length ? `
+      <div class="wantlist-group" data-group="wishlist">
+        <div class="wantlist-group-label">🙋 Collector Wishlists</div>
+        <div class="wantlist-grid">${groupHtml(wishlists)}</div>
+      </div>` : ''}
+    ${sets.length ? `
+      <div class="wantlist-group" data-group="set">
+        <div class="wantlist-group-label">📦 By Set</div>
+        <div class="wantlist-grid">${groupHtml(sets)}</div>
+      </div>` : ''}
+  `;
+
+  wireWantlistFilters();
+}
+
+function wireWantlistFilters() {
+  const search = document.getElementById('wantlist-search');
+  const filterWrap = document.getElementById('wantlist-priority-filters');
+  const emptyMsg = document.getElementById('wantlist-empty');
+  if (!search || !filterWrap) return;
+
+  let activePriority = 'all';
+
+  function applyFilters() {
+    const query = search.value.toLowerCase().trim();
+    let anyVisible = false;
+
+    document.querySelectorAll('#wantlist .wantlist-set').forEach(set => {
+      let setHasVisible = false;
+      set.querySelectorAll('.wantlist-card-row').forEach(row => {
+        const matchesSearch = !query || row.dataset.name.includes(query);
+        const matchesPriority = activePriority === 'all' || row.dataset.priority === activePriority;
+        const show = matchesSearch && matchesPriority;
+        row.hidden = !show;
+        if (show) setHasVisible = true;
+      });
+      set.hidden = !setHasVisible;
+      if (setHasVisible) anyVisible = true;
+    });
+
+    // Hide a group heading when all of its sets are hidden
+    document.querySelectorAll('#wantlist .wantlist-group').forEach(group => {
+      const visibleSet = group.querySelector('.wantlist-set:not([hidden])');
+      group.hidden = !visibleSet;
+    });
+
+    if (emptyMsg) emptyMsg.hidden = anyVisible;
+  }
+
+  search.addEventListener('input', applyFilters);
+
+  filterWrap.querySelectorAll('.wl-filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterWrap.querySelectorAll('.wl-filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activePriority = btn.dataset.priority;
+      applyFilters();
+    });
+  });
 }
 
 function renderAbout(data) {
