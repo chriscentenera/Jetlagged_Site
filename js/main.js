@@ -304,7 +304,7 @@ function renderShows(data) {
             <span>📍 ${s.location}</span>
             <span>${s.city}</span>
           </div>
-          <span class="show-table-badge">🪑 ${s.table}</span>
+          ${s.table ? `<span class="show-table-badge">🪑 ${s.table}</span>` : ''}
         </div>
         ${linkHtml}
       </div>
