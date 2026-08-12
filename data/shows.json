@@ -1,6 +1,14 @@
 {
   "shows": [
     {
+      "name": "Red-eye Show",
+      "date": "Sep 18, 2026",
+      "location": "RRGC Hall",
+      "city": "Richmond, BC",
+      "table": "",
+      "url": ""
+    },
+    {
       "name": "Vancity Card Show",
       "date": "Oct 2-4, 2026",
       "location": "Vancouver Convention Centre West",
@@ -13,6 +21,30 @@
       "date": "Oct 10-11, 2026",
       "location": "Nikkei Centre",
       "city": "Burnaby, BC",
+      "table": "",
+      "url": ""
+    },
+    {
+      "name": "Layover Card Show",
+      "date": "Oct 25, 2026",
+      "location": "RRGC Hall",
+      "city": "Richmond, BC",
+      "table": "",
+      "url": ""
+    },
+    {
+      "name": "Layover Card Show",
+      "date": "Nov 15, 2026",
+      "location": "RRGC Hall",
+      "city": "Richmond, BC",
+      "table": "",
+      "url": ""
+    },
+    {
+      "name": "Layover Anniversary Show",
+      "date": "Dec 5, 2026",
+      "location": "RRGC Hall",
+      "city": "Richmond, BC",
       "table": "",
       "url": ""
     },
