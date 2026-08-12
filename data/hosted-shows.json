@@ -1,6 +1,86 @@
 {
   "shows": [
     {
+      "id": "redeye-sept-show",
+      "active": true,
+      "name": "Red-eye Show",
+      "date": "2026-09-18",
+      "display_date": "Friday, September 18, 2026",
+      "time": "7pm – 11pm",
+      "venue_name": "RRGC Hall",
+      "venue_address": "7891 Cambie Rd., Richmond, BC V6X 1X7",
+      "maps_url": "",
+      "description": "Pulling an all-nighter? The Red-eye Show is our first after-hours card show at RRGC Hall — doors open at 7PM and we run till 11PM. Shop vendors, trade, and hang out with the Vancouver card community late into the night. 🌙",
+      "highlights": [
+        "After-hours: 7PM – 11PM",
+        "Free entry for attendees",
+        "Free parking",
+        "Vendor tables available"
+      ],
+      "vendor_description": "Vendor table pricing is TBD — reach out to reserve your spot.",
+      "color": "linear-gradient(135deg, #5c6b8a, #7082a8)"
+    },
+    {
+      "id": "layover-oct-show",
+      "active": true,
+      "name": "Layover Card Show",
+      "date": "2026-10-25",
+      "display_date": "Sunday, October 25, 2026",
+      "time": "11am – 4pm",
+      "venue_name": "RRGC Hall",
+      "venue_address": "7891 Cambie Rd., Richmond, BC V6X 1X7",
+      "maps_url": "",
+      "description": "The Layover Card Show returns to RRGC Hall! Shop dozens of vendors, trade with fellow collectors, pull some packs, and hang out with the Vancouver card community. Free entry for attendees.",
+      "highlights": [
+        "Free entry for attendees",
+        "Free parking",
+        "Vendor tables available",
+        "Dozens of vendors"
+      ],
+      "vendor_description": "Vendor table pricing is TBD — reach out to reserve your spot.",
+      "color": "linear-gradient(135deg, #e8856a, #f5c842)"
+    },
+    {
+      "id": "layover-nov15-show",
+      "active": true,
+      "name": "Layover Card Show",
+      "date": "2026-11-15",
+      "display_date": "Sunday, November 15, 2026",
+      "time": "11am – 4pm",
+      "venue_name": "RRGC Hall",
+      "venue_address": "7891 Cambie Rd., Richmond, BC V6X 1X7",
+      "maps_url": "",
+      "description": "The Layover Card Show returns to RRGC Hall! Shop dozens of vendors, trade with fellow collectors, pull some packs, and hang out with the Vancouver card community. Free entry for attendees.",
+      "highlights": [
+        "Free entry for attendees",
+        "Free parking",
+        "Vendor tables available",
+        "Dozens of vendors"
+      ],
+      "vendor_description": "Vendor table pricing is TBD — reach out to reserve your spot.",
+      "color": "linear-gradient(135deg, #9ecad4, #7082a8)"
+    },
+    {
+      "id": "layover-anniversary-show",
+      "active": true,
+      "name": "Layover Anniversary Show",
+      "date": "2026-12-05",
+      "display_date": "Saturday, December 5, 2026",
+      "time": "11am – 4pm",
+      "venue_name": "RRGC Hall",
+      "venue_address": "7891 Cambie Rd., Richmond, BC V6X 1X7",
+      "maps_url": "",
+      "description": "Celebrating the Layover series with our Anniversary Show at RRGC Hall! Join us for a special edition — dozens of vendors, trades, and the whole Vancouver card community. Free entry for attendees.",
+      "highlights": [
+        "Anniversary special",
+        "Free entry for attendees",
+        "Free parking",
+        "Vendor tables available"
+      ],
+      "vendor_description": "Vendor table pricing is TBD — reach out to reserve your spot.",
+      "color": "linear-gradient(135deg, #f5c842, #e8856a)"
+    },
+    {
       "id": "august-show",
       "active": true,
       "name": "The Dreamliner Show",

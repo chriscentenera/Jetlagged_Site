@@ -132,7 +132,7 @@ function renderHostedShows(shows) {
     const month = d.toLocaleString('default', { month: 'short' }).toUpperCase();
     const day = d.getDate();
     const c = countdownParts(s.date);
-    const highlightItems = s.highlights.map(h => `<li>${h}</li>`).join('');
+    const highlightItems = (s.highlights || []).map(h => `<li>${h}</li>`).join('');
     const mapsLink = s.maps_url
       ? `<a href="${s.maps_url}" target="_blank" class="btn btn-primary" style="font-size:.9rem;padding:.6rem 1.4rem;text-decoration:none;">📍 View Map</a>`
       : '';
@@ -163,8 +163,10 @@ function renderHostedShows(shows) {
           <div class="show-card-body">
             <div>
               <p class="show-description">${s.description}</p>
-              <div class="show-section-label">What to Expect</div>
-              <ul class="highlights-list">${highlightItems}</ul>
+              ${highlightItems ? `
+                <div class="show-section-label">What to Expect</div>
+                <ul class="highlights-list">${highlightItems}</ul>
+              ` : ''}
               ${mapsLink}
             </div>
 
