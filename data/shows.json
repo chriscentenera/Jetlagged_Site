@@ -1,36 +1,28 @@
 {
   "shows": [
     {
-      "name": "Guildford Card Show",
-      "date": "Jul 11, 2026",
-      "location": "Sheraton Vancouver Guildford Hotel",
-      "city": "Surrey, BC",
+      "name": "Vancity Card Show",
+      "date": "Oct 2-4, 2026",
+      "location": "Vancouver Convention Centre West",
+      "city": "Vancouver, BC",
       "table": "",
       "url": ""
     },
     {
-      "name": "Coastal Collectibles Convention",
-      "date": "Jul 18, 2026",
-      "location": "South Hall Banquet Hall",
-      "city": "Vancouver, BC",
-      "table": "88",
+      "name": "Collectortown",
+      "date": "Oct 10-11, 2026",
+      "location": "Nikkei Centre",
+      "city": "Burnaby, BC",
+      "table": "",
       "url": ""
     },
     {
-      "name": "Chonky Card Show",
-      "date": "Jul 25, 2026",
-      "location": "12500 Vickers Way",
+      "name": "The Dreamliner Show",
+      "date": "Aug 7-8, 2027",
+      "location": "Richmond Curling Centre",
       "city": "Richmond, BC",
-      "table": "3",
+      "table": "",
       "url": ""
-    },
-    {
-      "name": "Dreamliner Show",
-      "date": "Aug 1, 2026",
-      "location": "Richmond Curling Club",
-      "city": "Richmond, BC",
-      "table": "Table 78-80",
-      "url": "https://www.instagram.com/p/DV68uWslOQw/"
     }
   ]
 }

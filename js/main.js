@@ -304,6 +304,7 @@ function renderShows(data) {
         <div class="show-info">
           <h3>${s.name}</h3>
           <div class="show-meta">
+            <span>📅 ${s.date}</span>
             <span>📍 ${s.location}</span>
             <span>${s.city}</span>
           </div>

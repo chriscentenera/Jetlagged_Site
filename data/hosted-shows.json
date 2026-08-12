@@ -4,33 +4,32 @@
       "id": "august-show",
       "active": true,
       "name": "The Dreamliner Show",
-      "date": "2026-08-01",
-      "display_date": "Saturday, August 1, 2026",
+      "date": "2027-08-07",
+      "display_date": "Saturday–Sunday, August 7-8, 2027",
       "time": "10am – 5pm",
       "venue_name": "Richmond Curling Centre",
       "venue_address": "5540 Hollybridge Way, Richmond, BC V7C 4N3",
       "maps_url": "",
-      "description": "Fasten your seatbelts — The Dreamliner Show is the LARGEST FREE card show in the Lower Mainland! Jetlagged Cards is going all out: 200+ tables across 17,000+ sq ft, $1,000+ in giveaways, a stamp rally, and a full lounge area. Zero admission. Come join us for the most fun you'll have at a card show. 🛫",
+      "description": "Fasten your seatbelts — The Dreamliner Show is the LARGEST FREE card show in the Lower Mainland! Jetlagged Cards is going all out: 200+ tables across 17,000+ sq ft, a stamp rally, and a full lounge area. Zero admission. Come join us for the most fun you'll have at a card show. 🛫",
       "highlights": [
         "200+ vendor tables",
         "17,000+ sq ft of show space",
         "FREE admission",
-        "$1,000+ in giveaways",
         "Stamp rally",
         "Lounge area"
       ],
       "vendor_description": "Secure your spot at the biggest free card show in the Lower Mainland.",
       "vendor_tiers": [
-        { "name": "Economy", "price": "$110", "sold_out": false },
-        { "name": "Premium", "price": "$125", "sold_out": false },
-        { "name": "Business", "price": "$140", "sold_out": true }
+        { "name": "Economy", "price": "TBD", "sold_out": false },
+        { "name": "Premium", "price": "TBD", "sold_out": false },
+        { "name": "Business", "price": "TBD", "sold_out": false }
       ],
       "vendor_bulk": [
         { "min": 3, "discount": "$5 off / table" },
         { "min": 6, "discount": "$10 off / table" },
         { "min": 10, "discount": "$15 off / table" }
       ],
-      "showup_url": "https://app.joinshowup.io/apply/the-dreamliner-show",
+      "_comment_showup_url": "Commented out — awaiting the new ShowUp link for the 2027 show. Previous: https://app.joinshowup.io/apply/the-dreamliner-show",
       "color": "linear-gradient(135deg, #9ecad4, #7082a8)"
     },
     {
