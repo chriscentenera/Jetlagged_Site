@@ -1,6 +1,14 @@
 {
   "shows": [
     {
+      "name": "Guildford Card Show",
+      "date": "Sep 12, 2026",
+      "location": "Sheraton Vancouver Guildford Hotel",
+      "city": "Surrey, BC",
+      "table": "",
+      "url": "https://www.instagram.com/p/Db6ctuBS52D/?hl=en"
+    },
+    {
       "name": "Red-eye Show",
       "date": "Sep 18, 2026",
       "location": "RRGC Hall",
@@ -14,7 +22,7 @@
       "location": "Vancouver Convention Centre West",
       "city": "Vancouver, BC",
       "table": "",
-      "url": ""
+      "url": "https://www.vancityshow.com/"
     },
     {
       "name": "Collectortown",
