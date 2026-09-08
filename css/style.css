@@ -1078,42 +1078,6 @@ section { padding: 5rem 2rem; }
 .ticket-widget-block { grid-column: 1 / -1; }
 .ticket-widget-block .show-section-label { margin-top: 0.5rem; }
 
-/* Red-eye ticket promo banner (home page) */
-.ticket-banner-section { padding: 0 1.5rem; }
-.ticket-banner {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  max-width: 1000px;
-  margin: 2.5rem auto 0;
-  padding: 1.1rem 1.75rem;
-  background: linear-gradient(135deg, #5c6b8a, #7082a8);
-  border-radius: 16px;
-  color: white;
-  text-decoration: none;
-  box-shadow: 0 8px 24px rgba(92, 107, 138, 0.28);
-  transition: transform 0.15s, box-shadow 0.15s;
-}
-.ticket-banner:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(92, 107, 138, 0.35); }
-.ticket-banner-icon { font-size: 2rem; line-height: 1; flex-shrink: 0; }
-.ticket-banner-text { display: flex; flex-direction: column; gap: 0.15rem; flex: 1; }
-.ticket-banner-text strong { font-size: 1.1rem; font-weight: 800; }
-.ticket-banner-text > span { font-size: 0.9rem; opacity: 0.9; }
-.ticket-banner-cta {
-  flex-shrink: 0;
-  background: white;
-  color: #5c6b8a;
-  font-weight: 800;
-  font-size: 0.92rem;
-  padding: 0.6rem 1.3rem;
-  border-radius: 30px;
-  white-space: nowrap;
-}
-
-@media (max-width: 640px) {
-  .ticket-banner { flex-direction: column; text-align: center; gap: 0.85rem; }
-}
-
 .vendor-box {
   background: white;
   border: 2px solid #f0dfc0;
