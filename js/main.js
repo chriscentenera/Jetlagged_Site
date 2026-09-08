@@ -173,6 +173,7 @@ function renderHostedShows(shows) {
             <div>
               <div class="vendor-box">
                 <div class="show-section-label" style="margin-bottom:0.85rem;">Vendor Tables</div>
+                ${s.vendor_sold_out ? `<div class="vendor-soldout-banner">🚫 Tables Sold Out</div>` : ''}
                 <p class="vendor-desc">${s.vendor_description}</p>
                 ${s.vendor_tiers ? `
                   <div class="vendor-tiers-grid">
@@ -200,13 +201,26 @@ function renderHostedShows(shows) {
                   <a href="${s.showup_url}" target="_blank" class="btn btn-primary showup-apply-btn">Apply for a Table on ShowUp →</a>
                   <p class="showup-attribution">Vendor applications powered by <a href="https://joinshowup.io" target="_blank">ShowUp</a></p>
                 ` : ''}
+                ${s.waitlist_url ? `
+                  <a href="${s.waitlist_url}" target="_blank" class="btn btn-primary showup-apply-btn">Join the Waitlist →</a>
+                  <p class="showup-attribution">Waitlist powered by <a href="https://joinshowup.io" target="_blank">ShowUp</a></p>
+                ` : ''}
               </div>
             </div>
+
+            ${s.ticket_widget_event_id ? `
+              <div class="ticket-widget-block">
+                <div class="show-section-label">🎟️ Get Tickets</div>
+                <div id="tc-checkout-container-${s.ticket_widget_event_id}"></div>
+              </div>
+            ` : ''}
           </div>
         </div>
       </div>
     `;
   }).join('');
+
+  initTicketWidgets(shows);
 
   // Tick countdown every second
   setInterval(() => {
@@ -221,6 +235,44 @@ function renderHostedShows(shows) {
       }
     });
   }, 1000);
+}
+
+// Load the TicketsCandy checkout widget for any hosted show that has a
+// ticket_widget_event_id. The card HTML is injected via innerHTML, so the
+// vendor's <script> tags can't run inline — load the loader once, then
+// create each widget when TCCheckout is ready.
+function initTicketWidgets(shows) {
+  const ticketed = shows.filter(s => s.active !== false && s.ticket_widget_event_id);
+  if (!ticketed.length) return;
+
+  function createAll() {
+    ticketed.forEach(s => {
+      const containerId = `tc-checkout-container-${s.ticket_widget_event_id}`;
+      const el = document.getElementById(containerId);
+      if (!el || el.dataset.tcReady) return; // guard against double-init on re-render
+      el.dataset.tcReady = '1';
+      TCCheckout.createWidget({
+        widgetType: 'checkout',
+        eventId: String(s.ticket_widget_event_id),
+        iframeContainerId: containerId,
+        iframeContainerHeight: 'auto'
+      });
+    });
+  }
+
+  function waitForTC(tries) {
+    if (window.TCCheckout && typeof window.TCCheckout.createWidget === 'function') { createAll(); return; }
+    if (tries <= 0) { console.error('TicketsCandy checkout widget failed to load'); return; }
+    setTimeout(() => waitForTC(tries - 1), 150);
+  }
+
+  if (!document.getElementById('tc-loader-script')) {
+    const sc = document.createElement('script');
+    sc.id = 'tc-loader-script';
+    sc.src = 'https://ticketscandy.com/checkout-widget/loader.js';
+    document.head.appendChild(sc);
+  }
+  waitForTC(40); // poll up to ~6s for the loader to define TCCheckout
 }
 
 function renderEvents(data) {
@@ -474,6 +526,40 @@ function toggleFaq(i) {
   const item = document.getElementById(`faq-${i}`);
   item.classList.toggle('open');
 }
+
+
+// ── Hero carousel ─────────────────────────────────────────────────────────────
+
+(function initHeroCarousel() {
+  const hero = document.getElementById('hero-carousel');
+  if (!hero) return;
+  const slides = [...hero.querySelectorAll('.hero-slide')];
+  const dots = [...hero.querySelectorAll('.hero-dot')];
+  if (slides.length < 2) return;
+
+  let idx = 0;
+  let timer = null;
+
+  function show(n) {
+    idx = (n + slides.length) % slides.length;
+    slides.forEach((s, i) => s.classList.toggle('active', i === idx));
+    dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+  }
+  function next() { show(idx + 1); }
+  function prev() { show(idx - 1); }
+  function restart() { clearInterval(timer); timer = setInterval(next, 6000); }
+
+  hero.querySelector('.hero-next').addEventListener('click', () => { next(); restart(); });
+  hero.querySelector('.hero-prev').addEventListener('click', () => { prev(); restart(); });
+  dots.forEach((d, i) => d.addEventListener('click', () => { show(i); restart(); }));
+
+  // Pause auto-advance while the visitor is interacting with the hero
+  hero.addEventListener('mouseenter', () => clearInterval(timer));
+  hero.addEventListener('mouseleave', restart);
+
+  show(0);
+  restart();
+})();
 
 
 // ── Netlify Identity ──────────────────────────────────────────────────────────

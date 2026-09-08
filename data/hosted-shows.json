@@ -17,7 +17,10 @@
         "Free parking",
         "Vendor tables available"
       ],
-      "vendor_description": "Vendor table pricing is TBD — reach out to reserve your spot.",
+      "vendor_description": "Vendor tables are sold out! Join the waitlist below and we'll reach out if a spot opens up.",
+      "vendor_sold_out": true,
+      "waitlist_url": "https://app.joinshowup.io/apply/red-eye-show-sept18",
+      "ticket_widget_event_id": "20562",
       "color": "linear-gradient(135deg, #5c6b8a, #7082a8)"
     },
     {

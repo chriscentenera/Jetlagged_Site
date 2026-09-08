@@ -34,16 +34,53 @@
 <!-- ===== HOME PAGE ===== -->
 <div id="home" class="page active">
 
-  <div class="hero">
-    <div class="hero-content">
-      <img src="images/logo.jpg" alt="Jetlagged Cards" class="hero-logo" />
-      <div class="hero-tagline">✈️ Vancouver, BC &nbsp;·&nbsp; Est. 2025</div>
-      <h1 id="hero-title">Loading…</h1>
-      <p id="hero-subtitle"></p>
-      <a href="#" class="btn btn-primary" id="hero-cta-primary" data-page="store"></a>
-      <a href="#" class="btn btn-outline" id="hero-cta-secondary" data-scroll="shows-section"></a>
+  <div class="hero" id="hero-carousel">
+    <div class="hero-slide active" data-slide="0">
+      <div class="hero-content">
+        <img src="images/logo.jpg" alt="Jetlagged Cards" class="hero-logo" />
+        <div class="hero-tagline">✈️ Vancouver, BC &nbsp;·&nbsp; Est. 2025</div>
+        <h1 id="hero-title">Loading…</h1>
+        <p id="hero-subtitle"></p>
+        <a href="#" class="btn btn-primary" id="hero-cta-primary" data-page="store"></a>
+        <a href="#" class="btn btn-outline" id="hero-cta-secondary" data-scroll="shows-section"></a>
+      </div>
+    </div>
+
+    <div class="hero-slide hero-slide-redeye" data-slide="1">
+      <div class="hero-redeye-inner">
+        <div class="hero-redeye-imgwrap">
+          <img class="hero-redeye-img" src="images/red-eye-show.webp"
+               alt="The Red-eye Show — Late Night Card Show · Sept 18, 2026 · RRGC Hall, Richmond BC"
+               onerror="this.closest('.hero-slide-redeye').classList.add('img-missing')" />
+          <div class="hero-redeye-fallback">
+            <div class="hero-redeye-badge">🌙 Late Night Card Show</div>
+            <h2>The Red-eye Show</h2>
+            <p>Sept 18, 2026 · 7–11PM · RRGC Hall, Richmond BC</p>
+          </div>
+        </div>
+        <a href="#" class="btn btn-primary hero-redeye-cta" data-page="our-shows">Get Tickets Here →</a>
+      </div>
+    </div>
+
+    <button class="hero-nav hero-prev" aria-label="Previous slide">‹</button>
+    <button class="hero-nav hero-next" aria-label="Next slide">›</button>
+    <div class="hero-dots">
+      <button class="hero-dot active" data-goto="0" aria-label="Show slide 1"></button>
+      <button class="hero-dot" data-goto="1" aria-label="Show slide 2"></button>
     </div>
   </div>
+
+  <!-- Red-eye ticket promo banner -->
+  <section class="ticket-banner-section">
+    <a href="#" class="ticket-banner" data-page="our-shows">
+      <span class="ticket-banner-icon">🎟️</span>
+      <span class="ticket-banner-text">
+        <strong>Tickets are live for the Red-eye Show!</strong>
+        <span>Sept 18 · 7–11PM · RRGC Hall — reserve your spot</span>
+      </span>
+      <span class="ticket-banner-cta">Get Tickets →</span>
+    </a>
+  </section>
 
   <section class="shows-section" id="shows-section">
     <h2 class="section-title">Find Us at a Show</h2>

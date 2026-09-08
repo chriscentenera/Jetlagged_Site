@@ -103,10 +103,10 @@ nav {
 .hero {
   background: linear-gradient(135deg, #fff4e2 0%, #fde8cc 50%, #fcdfc0 100%);
   color: var(--text);
-  padding: 6rem 2rem 4rem;
   text-align: center;
   position: relative;
   overflow: hidden;
+  display: grid;
 }
 
 .hero::before {
@@ -125,6 +125,115 @@ nav {
 }
 
 .hero-content { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+
+/* ── Hero carousel ── */
+.hero-slide {
+  /* Stack every slide in the same grid cell so the hero sizes to the tallest
+     slide and its height stays constant as the carousel rotates. */
+  grid-area: 1 / 1;
+  display: flex;
+  min-height: 600px;
+  padding: 5rem 2rem 4.5rem;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  pointer-events: none;
+}
+.hero-slide.active { opacity: 1; visibility: visible; pointer-events: auto; z-index: 2; }
+
+.hero-slide-redeye { background: #2b2b2b; align-items: stretch; }
+.hero-redeye-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  width: 100%;
+  min-height: 0;
+}
+/* Fill box: grows to take the slide's leftover height above the CTA.
+   The image scales to whichever edge it meets first, keeping its ratio. */
+.hero-redeye-imgwrap {
+  flex: 1 1 0;
+  min-height: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-redeye-img {
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 14px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+.hero-redeye-cta { flex: 0 0 auto; margin: 0; }
+
+/* fallback shown only if the flyer image fails to load */
+.hero-redeye-fallback { display: none; color: #fff; }
+.hero-slide-redeye.img-missing .hero-redeye-img { display: none; }
+.hero-slide-redeye.img-missing .hero-redeye-fallback { display: block; }
+.hero-redeye-badge {
+  display: inline-block;
+  background: #c0442a;
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+.hero-redeye-fallback h2 { font-size: 2.6rem; font-weight: 900; color: #fff; margin-bottom: 0.5rem; }
+.hero-redeye-fallback p { font-size: 1.05rem; color: #d8d0c8; }
+
+.hero-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 42px; height: 42px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.78);
+  color: var(--text);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+  transition: background 0.15s;
+}
+.hero-nav:hover { background: #fff; }
+.hero-prev { left: 1rem; }
+.hero-next { right: 1rem; }
+
+.hero-dots {
+  position: absolute;
+  bottom: 1.1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  gap: 0.5rem;
+}
+.hero-dot {
+  width: 11px; height: 11px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(120, 120, 120, 0.45);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.15s, transform 0.15s;
+}
+.hero-dot.active { background: var(--primary); transform: scale(1.2); }
 
 .hero h1 {
   font-size: clamp(2.5rem, 6vw, 4.5rem);
@@ -965,6 +1074,46 @@ section { padding: 5rem 2rem; }
   margin-bottom: 0.75rem;
 }
 
+/* Full-width ticket checkout inside a hosted show card */
+.ticket-widget-block { grid-column: 1 / -1; }
+.ticket-widget-block .show-section-label { margin-top: 0.5rem; }
+
+/* Red-eye ticket promo banner (home page) */
+.ticket-banner-section { padding: 0 1.5rem; }
+.ticket-banner {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  max-width: 1000px;
+  margin: 2.5rem auto 0;
+  padding: 1.1rem 1.75rem;
+  background: linear-gradient(135deg, #5c6b8a, #7082a8);
+  border-radius: 16px;
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(92, 107, 138, 0.28);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.ticket-banner:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(92, 107, 138, 0.35); }
+.ticket-banner-icon { font-size: 2rem; line-height: 1; flex-shrink: 0; }
+.ticket-banner-text { display: flex; flex-direction: column; gap: 0.15rem; flex: 1; }
+.ticket-banner-text strong { font-size: 1.1rem; font-weight: 800; }
+.ticket-banner-text > span { font-size: 0.9rem; opacity: 0.9; }
+.ticket-banner-cta {
+  flex-shrink: 0;
+  background: white;
+  color: #5c6b8a;
+  font-weight: 800;
+  font-size: 0.92rem;
+  padding: 0.6rem 1.3rem;
+  border-radius: 30px;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .ticket-banner { flex-direction: column; text-align: center; gap: 0.85rem; }
+}
+
 .vendor-box {
   background: white;
   border: 2px solid #f0dfc0;
@@ -1041,6 +1190,19 @@ section { padding: 5rem 2rem; }
   color: #c0a898;
   margin-top: 0.2rem;
   text-transform: uppercase;
+}
+
+.vendor-soldout-banner {
+  display: inline-block;
+  background: #c0442a;
+  color: white;
+  font-weight: 800;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.95rem;
+  border-radius: 20px;
+  margin-bottom: 0.85rem;
 }
 
 /* Bulk discounts */
@@ -1534,7 +1696,8 @@ footer span { color: var(--primary); }
 
   /* Hero */
   .hero-logo { width: 160px; height: 160px; }
-  .hero { padding: 4rem 1.5rem 3rem; }
+  .hero-slide { padding: 4rem 1.5rem 3.5rem; min-height: 520px; }
+  .hero-nav { width: 36px; height: 36px; font-size: 1.3rem; }
 
   /* Promo cards */
   .hosted-promo { padding: 2rem 1rem; gap: 1rem; flex-direction: column; align-items: center; }
@@ -1597,7 +1760,7 @@ footer span { color: var(--primary); }
 
   /* Hero */
   .hero-logo { width: 130px; height: 130px; }
-  .hero { padding: 3rem 1rem 2.5rem; }
+  .hero-slide { padding: 3rem 1rem 3rem; min-height: 460px; }
   .hero p { font-size: 1rem; }
 
   /* Promo cards: keep date | text | countdown row, just tighter */
