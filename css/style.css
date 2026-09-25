@@ -145,8 +145,8 @@ nav {
 }
 .hero-slide.active { opacity: 1; visibility: visible; pointer-events: auto; z-index: 2; }
 
-.hero-slide-redeye { background: #2b2b2b; align-items: stretch; }
-.hero-redeye-inner {
+.hero-slide-spotlight { background: #2b2b2b; align-items: stretch; }
+.hero-spotlight-inner {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -157,7 +157,7 @@ nav {
 }
 /* Fill box: grows to take the slide's leftover height above the CTA.
    The image scales to whichever edge it meets first, keeping its ratio. */
-.hero-redeye-imgwrap {
+.hero-spotlight-imgwrap {
   flex: 1 1 0;
   min-height: 0;
   width: 100%;
@@ -165,7 +165,7 @@ nav {
   align-items: center;
   justify-content: center;
 }
-.hero-redeye-img {
+.hero-spotlight-img {
   max-height: 100%;
   max-width: 100%;
   width: auto;
@@ -174,13 +174,13 @@ nav {
   border-radius: 14px;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
 }
-.hero-redeye-cta { flex: 0 0 auto; margin: 0; }
+.hero-spotlight-cta { flex: 0 0 auto; margin: 0; }
 
 /* fallback shown only if the flyer image fails to load */
-.hero-redeye-fallback { display: none; color: #fff; }
-.hero-slide-redeye.img-missing .hero-redeye-img { display: none; }
-.hero-slide-redeye.img-missing .hero-redeye-fallback { display: block; }
-.hero-redeye-badge {
+.hero-spotlight-fallback { display: none; color: #fff; }
+.hero-slide-spotlight.img-missing .hero-spotlight-img { display: none; }
+.hero-slide-spotlight.img-missing .hero-spotlight-fallback { display: block; }
+.hero-spotlight-badge {
   display: inline-block;
   background: #c0442a;
   color: #fff;
@@ -192,8 +192,8 @@ nav {
   border-radius: 20px;
   margin-bottom: 1rem;
 }
-.hero-redeye-fallback h2 { font-size: 2.6rem; font-weight: 900; color: #fff; margin-bottom: 0.5rem; }
-.hero-redeye-fallback p { font-size: 1.05rem; color: #d8d0c8; }
+.hero-spotlight-fallback h2 { font-size: 2.6rem; font-weight: 900; color: #fff; margin-bottom: 0.5rem; }
+.hero-spotlight-fallback p { font-size: 1.05rem; color: #d8d0c8; }
 
 .hero-nav {
   position: absolute;

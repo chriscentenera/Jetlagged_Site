@@ -1,29 +1,6 @@
 {
   "shows": [
     {
-      "id": "redeye-sept-show",
-      "active": true,
-      "name": "Red-eye Show",
-      "date": "2026-09-18",
-      "display_date": "Friday, September 18, 2026",
-      "time": "7pm – 11pm",
-      "venue_name": "RRGC Hall",
-      "venue_address": "7891 Cambie Rd., Richmond, BC V6X 1X7",
-      "maps_url": "",
-      "description": "The first ever Red-eye Show! Come join us from 7PM–11PM for a laid-back night of cards, vendors, trades, and good vibes with the Vancouver card community.",
-      "highlights": [
-        "After-hours: 7PM – 11PM",
-        "$5 entry fee",
-        "Free parking",
-        "Vendor tables available"
-      ],
-      "vendor_description": "Vendor tables are sold out! Join the waitlist below and we'll reach out if a spot opens up.",
-      "vendor_sold_out": true,
-      "waitlist_url": "https://app.joinshowup.io/apply/red-eye-show-sept18",
-      "ticket_widget_event_id": "20562",
-      "color": "linear-gradient(135deg, #5c6b8a, #7082a8)"
-    },
-    {
       "id": "layover-oct-show",
       "active": true,
       "name": "Layover Card Show",
