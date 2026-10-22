@@ -1,6 +1,26 @@
 {
   "shows": [
     {
+      "id": "redeye-oct-show",
+      "active": true,
+      "name": "Red-eye Show",
+      "date": "2026-10-23",
+      "display_date": "Friday, October 23, 2026",
+      "time": "7pm – 11pm",
+      "venue_name": "RRGC Hall",
+      "venue_address": "7891 Cambie Rd., Richmond, BC V6X 1X7",
+      "maps_url": "",
+      "description": "The Red-eye Show is back! Join us 7PM–11PM for a laid-back night of cards, vendors, trades, and good vibes. Part of a two-shows, one-weekend combo with the Layover Card Show — one ticket gets you into both days, and kids under 12 are free.",
+      "highlights": [
+        "After-hours: 7PM – 11PM",
+        "$5 at the door, $3 online",
+        "One ticket covers both weekend shows",
+        "Kids under 12 free"
+      ],
+      "vendor_description": "Vendor table pricing is TBD — reach out to reserve your spot.",
+      "color": "linear-gradient(135deg, #5c6b8a, #7082a8)"
+    },
+    {
       "id": "layover-oct-show",
       "active": true,
       "name": "Layover Card Show",
@@ -10,56 +30,16 @@
       "venue_name": "RRGC Hall",
       "venue_address": "7891 Cambie Rd., Richmond, BC V6X 1X7",
       "maps_url": "",
-      "description": "The Layover Card Show returns to RRGC Hall! Shop dozens of vendors, trade with fellow collectors, pull some packs, and hang out with the Vancouver card community. $5 entry at the door, or $3 early bird.",
+      "description": "The Layover Card Show returns to RRGC Hall! Shop dozens of vendors, trade with fellow collectors, pull some packs, and hang out with the Vancouver card community. $5 at the door, or $3 online — one ticket covers both weekend shows (Red-eye Fri + Layover Sun), and kids under 12 are free.",
       "highlights": [
-        "$5 entry ($3 early bird)",
+        "$5 at the door, $3 online",
+        "One ticket covers both weekend shows",
         "Free parking",
-        "Vendor tables available",
         "Dozens of vendors"
       ],
       "vendor_description": "Vendor table pricing is TBD — reach out to reserve your spot.",
       "ticket_widget_event_id": "21593",
       "color": "linear-gradient(135deg, #e8856a, #f5c842)"
-    },
-    {
-      "id": "layover-nov15-show",
-      "active": true,
-      "name": "Layover Card Show",
-      "date": "2026-11-15",
-      "display_date": "Sunday, November 15, 2026",
-      "time": "11am – 4pm",
-      "venue_name": "RRGC Hall",
-      "venue_address": "7891 Cambie Rd., Richmond, BC V6X 1X7",
-      "maps_url": "",
-      "description": "The Layover Card Show returns to RRGC Hall! Shop dozens of vendors, trade with fellow collectors, pull some packs, and hang out with the Vancouver card community. $5 entry at the door, or $3 early bird.",
-      "highlights": [
-        "$5 entry ($3 early bird)",
-        "Free parking",
-        "Vendor tables available",
-        "Dozens of vendors"
-      ],
-      "vendor_description": "Vendor table pricing is TBD — reach out to reserve your spot.",
-      "color": "linear-gradient(135deg, #9ecad4, #7082a8)"
-    },
-    {
-      "id": "layover-anniversary-show",
-      "active": true,
-      "name": "Layover Anniversary Show",
-      "date": "2026-12-05",
-      "display_date": "Saturday, December 5, 2026",
-      "time": "11am – 4pm",
-      "venue_name": "RRGC Hall",
-      "venue_address": "7891 Cambie Rd., Richmond, BC V6X 1X7",
-      "maps_url": "",
-      "description": "Celebrating the Layover show anniversary at RRGC Hall! Join us for a special edition! Dozens of vendors, trades, and the whole Vancouver card community. Free entry for attendees.",
-      "highlights": [
-        "Anniversary special",
-        "Free entry for attendees",
-        "Free parking",
-        "Vendor tables available"
-      ],
-      "vendor_description": "Vendor table pricing is TBD — reach out to reserve your spot.",
-      "color": "linear-gradient(135deg, #f5c842, #e8856a)"
     },
     {
       "id": "august-show",
@@ -92,28 +72,6 @@
       ],
       "_comment_showup_url": "Commented out — awaiting the new ShowUp link for the 2027 show. Previous: https://app.joinshowup.io/apply/the-dreamliner-show",
       "color": "linear-gradient(135deg, #9ecad4, #7082a8)"
-    },
-    {
-      "id": "November-show",
-      "active": false,
-      "name": "Layover Card Show",
-      "date": "2026-11-6",
-      "display_date": "Saturday, November 6-7, 2026",
-      "time": "11am – 4pm",
-      "venue_name": "Richmond, BC",
-      "venue_address": "Richmond, BC",
-      "maps_url": "",
-      "description": "Our fourth stop for the layover card show! Come shop dozens of vendors, trade with fellow collectors, pull some packs, and hang out with the Vancouver card community. Free entry for attendees.",
-      "highlights": [
-        "30+ vendor tables",
-        "Free entry for attendees",
-        "Pack wars & door prizes",
-        "Grading drop-off station",
-        "Food & drinks on site"
-      ],
-      "vendor_description": "Grab a table and sell to hundreds of local collectors. Tables include a 6ft table and two chairs. Setup starts at 8am.",
-      "showup_url": "https://app.joinshowup.io/organizer/jetlagged-card",
-      "color": "linear-gradient(135deg, #e8856a, #f5c842)"
     }
   ]
 }
